@@ -2,17 +2,20 @@ import { SiInstagram, SiLinkedin, SiTwitter, SiYoutube } from "react-icons/si";
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiArrowRight, FiArrowUpRight, FiPhone } from "react-icons/fi";
-import { FaUserFriends } from 'react-icons/fa'; // Import icon for enrollment count
-import deliveryImage from '../images/AmrognLogo2.png';
-import Image from '../images/menu/chickenFajita.png';
-import Placeholder from '../images/placeholder.png';
-import branchCmc from '../images/branch.jpg';
-import branch2 from '../images/branch2.jpg';
-import branch4Kilo from '../images/branch4Kilo.jpg';
-import branchMerkato from '../images/branchMerkato.jpg';
-import branchPiassa from '../images/branchPiassa.jpg';
-import branchMekanisa from '../images/branchMekanisa.jpg';
-import branchBethel from '../images/branchBethel.jpg';
+import { FaUserFriends } from "react-icons/fa"; // Import icon for enrollment count
+import { FaMapPin } from 'react-icons/fa';
+
+
+import deliveryImage from "../images/AmrognLogo2.png";
+import Image from "../images/menu/chickenFajita.png";
+import Placeholder from "../images/placeholder.png";
+import branchCmc from "../images/branch.jpg";
+import branch2 from "../images/branch2.jpg";
+import branch4Kilo from "../images/branch4Kilo.jpg";
+import branchMerkato from "../images/branchMerkato.jpg";
+import branchPiassa from "../images/branchPiassa.jpg";
+import branchMekanisa from "../images/branchMekanisa.jpg";
+import branchBethel from "../images/branchBethel.jpg";
 
 export const Example = () => {
   return (
@@ -64,10 +67,16 @@ const LinksContainer = ({ setHoveredImage }) => {
         <FaUserFriends className="text-gray-600" />
         <p className=" text-gray-900">8+ branches in Addis</p>
       </div>
-      <motion.div className="font-mono space-y-2 p-8 pl-8 md:pl-20">
+      <motion.div className=" space-y-2 p-8 pl-8 md:pl-20">
         {LINKS.map((l, idx) => {
           return (
-            <NavLink key={l.title} href={l.href} idx={idx} image={l.image} setHoveredImage={setHoveredImage}>
+            <NavLink
+              key={l.title}
+              href={l.href}
+              idx={idx}
+              image={l.image}
+              setHoveredImage={setHoveredImage}
+            >
               {l.title}
             </NavLink>
           );
@@ -104,10 +113,10 @@ const NavLink = ({ children, href, idx, image, setHoveredImage }) => {
 const NavLogo = () => {
   return (
     <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/6">
-      <img 
-        src={deliveryImage} 
-        alt="Delivery" 
-        className="w-24 sm:w-32 md:w-40 lg:w-48 h-auto" 
+      <img
+        src={deliveryImage}
+        alt="Delivery"
+        className="w-24 sm:w-32 md:w-40 lg:w-48 h-auto"
       />
     </div>
   );
@@ -128,7 +137,11 @@ const Logo = () => {
       className="grid h-18 w-18 place-content-center rounded-br-xl rounded-tl-xl bg-customYellow transition-colors"
     >
       <div className="md:w-1/2">
-        <img src={deliveryImage} alt="Delivery" className=" h-auto object-contain absolute -top-12" />
+        <img
+          src={deliveryImage}
+          alt="Delivery"
+          className=" h-auto object-contain absolute -top-12"
+        />
       </div>
     </motion.a>
   );
@@ -154,11 +167,14 @@ const HamburgerButton = ({ active, setActive }) => {
       >
         <div className="w-9 relative overflow-visible">
           <div className="flex justify-center mb-16">
-            <img
+            {/* <img
               src={Placeholder}
               // alt={name}
               className="w-32 h-32 object-contain absolute -top-12"
-            />
+            /> */}
+            <div className="absolute top-0 right-0 transform translate-x-3 translate-y-3 animate-bounce">
+              <FaMapPin className="w-8 h-8 text-customRed" />
+            </div>
           </div>
         </div>
         {/* <img src={Placeholder} alt="" />
@@ -221,7 +237,7 @@ const FooterCTAs = () => {
           },
         }}
         exit={{ opacity: 0, y: 8 }}
-        className="absolute bottom-2 right-2 flex items-center gap-2 rounded-full bg-gray-800 px-3 py-3 text-4xl uppercase text-white transition-colors hover:bg-customYellow hover:text-gray-300 md:bottom-4 md:right-4 md:px-6 md:text-2xl"
+        className="absolute bottom-2 right-2 flex items-center gap-2 rounded-full px-3 py-3 text-4xl uppercase text-white transition-colors hover:bg-red-500 hover:text-gray-300 md:bottom-4 md:right-4 md:px-6 md:text-2xl"
       >
         <span className="hidden md:block">Order Now</span> <FiPhone />
       </motion.button>
@@ -269,7 +285,7 @@ const LINKS = [
     title: "Amroኝ Kality/ቃሊቲ ",
     href: "#",
     image: branch2,
-  }
+  },
 ];
 
 const SOCIAL_CTAS = [
