@@ -31,19 +31,29 @@ const Front = () => {
         <ServiceCard title="Online Order" description="Orderly - Ordering Software" />
         <ServiceCard title="Available on beU" description="For Fast Delivery" />
         <ServiceCard title="We Are Any Where" description="8+ branches in Addis" />
-        <ServiceCard title="Contact Number" description="09" />
+        <ServiceCard title="Contact Number" description="The technologies that we use" />
       </div>
     </div>
   );
 };
-
-const ServiceCard = ({ title, description }) => {
+const ServiceCard = ({ title, description, badgeText }) => {
   return (
-    <div className="bg-customRed p-4 rounded-lg shadow-md text-center">
+    <div className="bg-white p-4 rounded-lg shadow-md text-center relative">
+      <div className="absolute top-0 left-0 m-2 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">
+        {badgeText}
+      </div>
       <h2 className="text-lg font-semibold mb-2">{title}</h2>
-      <p className="text-gray-100">{description}</p>
+      <p className="text-gray-600">{description}</p>
     </div>
   );
 };
+// const ServiceCard = ({ title, description }) => {
+//   return (
+//     <div className="bg-white p-4 rounded-lg shadow-md text-center">
+//       <h2 className="text-lg font-semibold mb-2">{title}</h2>
+//       <p className="text-gray-600">{description}</p>
+//     </div>
+//   );
+// };
 
 export default Front;
