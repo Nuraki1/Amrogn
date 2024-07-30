@@ -10,7 +10,7 @@ import burgerImage from "./images/burger.png";
 import friesImage from "./images/fries.png";
 import soupImage from "./images/soup.png";
 import sandwichImage from "./images/sandwich.png";
-import iceCreamImage from "./images/icecream.png";
+// import iceCreamImage from "./images/icecream.png";
 import cakeImage from "./images/cake.png";
 import hot from "./images/coffee.png";
 import soft from "./images/cola.png";
@@ -22,7 +22,7 @@ const categoryData = [
   { image: friesImage, name: "Fries" },
   { image: soupImage, name: "Soup" },
   { image: sandwichImage, name: "Sandwich" },
-  { image: iceCreamImage, name: "Ice Cream" },
+  // { image: iceCreamImage, name: "Ice Cream" },
   { image: cakeImage, name: "Cake" },
   { image: hot, name: "Hot Drinks" },
   { image: soft, name: "Soft Drinks" },
