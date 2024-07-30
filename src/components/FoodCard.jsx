@@ -8,7 +8,7 @@ const FoodCard = ({ image, name, price,size, rating, sales }) => {
         <img
           src={image}
           alt={name}
-          className="w-32 h-32 object-contain absolute -top-12"
+          className="w-28 h-28 object-contain absolute -top-12"
         />
       </div>
       <h2 className="text-xl font-semibold text-center mt-10">{name}</h2>

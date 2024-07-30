@@ -1,11 +1,11 @@
 import React, { useRef, useState, useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa"; // Import icon for "View More" button
-
+import ThemeToggle from "../components/ThemeToggle.jsx"
 const CategoryCard = ({ image, name }) => {
   return (
     <div className="flex flex-col items-center">
       {/* <p className="mt-2 mb-0 text-center text-sm text-white">{name}</p> */}
-      <div className="bg-gray-100 dark:bg-gray-600 rounded-full p-3 w-16 h-16 flex items-center justify-center">
+      <div className="bg-gray-900 dark:bg-gray-600 rounded-full p-3 w-16 h-16 flex items-center justify-center">
         <img src={image} alt={name} className="w-16 h-16 object-contain" />
       </div>
     </div>
@@ -40,12 +40,16 @@ const Categories = ({ categories }) => {
   };
 
   return (
-    <div className={`p-4 dark:bg-gradient-to-br dark:from-black dark:to-customRed bg-gradient-to-br from-customYellow to-customRed shadow-lg text-white ${isSticky ? "fixed top-0 left-0 w-full z-50 transition-all" : "relative"} ${height} transition-all duration-300`}>
+    <div className={`p-4 dark:bg-gradient-to-br dark:from-black dark:to-customRed bg-gradient-to-br from-customRed to-customYellow shadow-lg text-gray-900 dark:text-gray-100 ${isSticky ? "fixed top-0 left-0 w-full z-50 transition-all" : "relative"} ${height} transition-all duration-300`}>
 
       <div className="flex justify-between items-center mb-4">
         <div>
-          <h2 className="text-2xl font-semibold">Categories</h2>
+          <h2 className="text-2xl font-bold">Categories</h2>
         </div>
+        {/* <div >
+          <ThemeToggle />
+        </div> */}
+          <span><ThemeToggle /></span>
         <button
           className="flex items-center space-x-2 text-white hover:text-white"
           onClick={() => scroll(200)}
@@ -53,7 +57,9 @@ const Categories = ({ categories }) => {
           <span>View More</span>
           <FaArrowRight />
         </button>
+       
       </div>
+      
       <div className="flex overflow-x-hidden relative">
         <div
           ref={scrollRef}

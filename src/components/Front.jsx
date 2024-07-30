@@ -20,7 +20,7 @@ const Front = () => {
         <ServiceCard title="Online Order" description="Orderly - Ordering Software" badgeText="Orderly" />
         <ServiceCard title="Available on beU" description="For Fast Delivery" badgeText="Delivery"  />
         <ServiceCard title="We Are Any Where" description="8+ branches in Addis" badgeText="Places" />
-        <ServiceCard title="Contact Number" description="The technologies that we use" badgeText="contact"  />
+        <ServiceCard title="Contact Number" description="09" badgeText="contact"  />
       </div>
     </div>
   );

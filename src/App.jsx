@@ -4,6 +4,7 @@ import ThemeToggle from "./components/ThemeToggle.jsx"
 import Front from "./components/Front.jsx";
 import PopularMenu from "./components/PopularMenu.jsx";
 import { Example } from "./components/Example.jsx";
+import Footer from "./components/Footer.jsx";
 
 import burgerImage from "./images/burger.png";
 import friesImage from "./images/fries.png";
@@ -50,6 +51,8 @@ const App = () => {
         </div>
 
         <Example />
+
+        <Footer/>
       </div>
     </>
   );

@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FiArrowRight, FiArrowUpRight, FiPhone } from "react-icons/fi";
 import { FaUserFriends } from "react-icons/fa"; // Import icon for enrollment count
 import { FaMapPin } from 'react-icons/fa';
-
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
 import deliveryImage from "../images/AmrognLogo2.png";
 import Image from "../images/menu/chickenFajita.png";
@@ -16,10 +16,11 @@ import branchMerkato from "../images/branchMerkato.jpg";
 import branchPiassa from "../images/branchPiassa.jpg";
 import branchMekanisa from "../images/branchMekanisa.jpg";
 import branchBethel from "../images/branchBethel.jpg";
+import map from "../images/map.png"
 
 export const Example = () => {
   return (
-    <div className="h-screen bg-neutral-100">
+    <div >
       <Nav />
     </div>
   );
@@ -62,23 +63,24 @@ const LinksOverlay = () => {
 const LinksContainer = ({ setHoveredImage }) => {
   return (
     <>
-      <h1 className=" font-extrabold pl-3 ">Addis Ababa </h1>
-      <div className="flex items-center justify-center md:justify-start space-x-2">
-        <FaUserFriends className="text-gray-600" />
-        <p className=" text-gray-900">8+ branches in Addis</p>
+      <div className="flex items-start justify-center md:justify-start space-x-2">
+        <FaMapMarkerAlt className="text-gray-600" />
+        <p className="text-gray-900">8+ branches in Addis</p>
       </div>
-      <motion.div className=" space-y-2 p-8 pl-8 md:pl-20">
+      <motion.div className="font-mono space-y-2 p-6 pl-6 md:pl-20" style={{ cursor: 'pointer' }}>
         {LINKS.map((l, idx) => {
           return (
-            <NavLink
-              key={l.title}
-              href={l.href}
-              idx={idx}
-              image={l.image}
-              setHoveredImage={setHoveredImage}
-            >
-              {l.title}
-            </NavLink>
+            <div key={l.title} className="flex items-center space-x-2">
+              <NavLink
+                href={l.href}
+                idx={idx}
+                image={l.image}
+                setHoveredImage={setHoveredImage}
+              >
+                {l.title}
+              </NavLink>
+              <img src={map} width="25px" height="25px" alt="Map Icon" />
+            </div>
           );
         })}
       </motion.div>
@@ -86,7 +88,23 @@ const LinksContainer = ({ setHoveredImage }) => {
   );
 };
 
+
 const NavLink = ({ children, href, idx, image, setHoveredImage }) => {
+  const [clickTimeout, setClickTimeout] = useState(null);
+
+  const handleClick = () => {
+    if (clickTimeout) {
+      clearTimeout(clickTimeout);
+      setClickTimeout(null);
+      window.open(href, "_blank");
+    } else {
+      setClickTimeout(setTimeout(() => {
+        setHoveredImage(image);
+        setClickTimeout(null);
+      }, 250));
+    }
+  };
+
   return (
     <motion.a
       initial={{ opacity: 0, y: -8 }}
@@ -100,10 +118,8 @@ const NavLink = ({ children, href, idx, image, setHoveredImage }) => {
         },
       }}
       exit={{ opacity: 0, y: -8 }}
-      href={href}
-      className="block font-semibold text-2xl md:text-5xl lg:text-5xl text-2sm  text-gray from-neutral-600 transition-colors hover:text-neutral-500"
-      onMouseEnter={() => setHoveredImage(image)}
-      onMouseLeave={() => setHoveredImage(null)}
+      onClick={handleClick}
+      className="block font-semibold text-1xl md:text-3xl lg:text-2xl text-2sm  text-gray from-neutral-600 transition-colors hover:text-neutral-500"
     >
       {children}
     </motion.a>
@@ -118,6 +134,7 @@ const NavLogo = () => {
         alt="Delivery"
         className="w-24 sm:w-32 md:w-40 lg:w-48 h-auto"
       />
+      <h1 className=" font-extrabold pl-0 ">Addis Ababa </h1>
     </div>
   );
 };
@@ -237,9 +254,9 @@ const FooterCTAs = () => {
           },
         }}
         exit={{ opacity: 0, y: 8 }}
-        className="absolute bottom-2 right-2 flex items-center gap-2 rounded-full px-3 py-3 text-4xl uppercase text-white transition-colors hover:bg-red-500 hover:text-gray-300 md:bottom-4 md:right-4 md:px-6 md:text-2xl"
+        className="absolute bottom-2 right-2 flex items-center gap-2 rounded-full px-3 py-3 text-4xl uppercase text-white transition-colors hover:bg-red-500 hover:text-white"
       >
-        <span className="hidden md:block">Order Now</span> <FiPhone />
+        <FiArrowRight />
       </motion.button>
     </>
   );

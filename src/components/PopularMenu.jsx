@@ -5,11 +5,14 @@ import ChickenBurger from '../images/menu/chickenBurger.png';
 import roastedChicken from '../images/menu/roastedChicken.png';
 import Shawarma from '../images/menu/chickenShawarma.png';
 import FriedChicken from '../images/menu/friedChicken.png';
-import ChickenKabsa from '../images/menu/chickenKabsa.png';
+import ChickenKabsa from '../images/menu/Akabsa.png';
 import ChickenWing from '../images/menu/wingss.png';
 import ChickenMofo from '../images/menu/chickenMofo.png';
-import GilledChicken from '../images/menu/grilledChicken.png';
+import GrilledChicken from '../images/menu/grilledChicken.png';
 import ShawarmaPlate from '../images/shawarmaPlate2.png';
+import Fajitah from '../images/menu/fajitah.png';
+import Aroasted from '../images/AroastedFull.png';
+
 // import Shawarma from '../images/shawarma2.png';
 
 import { FaBook } from 'react-icons/fa'; // Import the FaBook icon
@@ -33,7 +36,7 @@ const PopularMenu = () => {
     {/* Head of the menu */}
 
 <div className="w-full mb-8 relative">
-  <h2 className="text-3xl font-bold dark:text-white text-center relative z-10 inline-block font-mono bg-black text-transparent bg-clip-text">
+  <h2 className="text-3xl font-extrabold text-gray-700 dark:text-gray-900 text-center relative z-10 inline-block text-transparent bg-clip-text">
     Our Popular Menu
   </h2>
   <div className="absolute top-0 left-0 right-0 h-full flex items-center justify-center">
@@ -101,82 +104,27 @@ const PopularMenu = () => {
       size={1100}
     />
     <FoodCard
-      image={GilledChicken}
+      image={GrilledChicken}
       name="Gilled Chicken"
       price={1100}
       rating={4.1}
       size={1100}
     />
     <FoodCard
-      image={GilledChicken}
-      name="Gilled Chicken"
-      price={1100}
+      image={Fajitah}
+      name="Fajitah"
+      price={580}
       rating={4.1}
       size={1100}
     />
     <FoodCard
-      image={GilledChicken}
-      name="Gilled Chicken"
+      image={Aroasted}
+      name="Roasted Chicken"
       price={1100}
       rating={4.1}
-      size={1100}
+      size= "Full"
     />
-    <FoodCard
-      image={GilledChicken}
-      name="Gilled Chicken"
-      price={1100}
-      rating={4.1}
-      size={1100}
-    />
-    <FoodCard
-      image={GilledChicken}
-      name="Gilled Chicken"
-      price={1100}
-      rating={4.1}
-      size={1100}
-    />
-    <FoodCard
-      image={GilledChicken}
-      name="Gilled Chicken"
-      price={1100}
-      rating={4.1}
-      size={1100}
-    />
-    <FoodCard
-      image={GilledChicken}
-      name="Gilled Chicken"
-      price={1100}
-      rating={4.1}
-      size={1100}
-    />
-    <FoodCard
-      image={GilledChicken}
-      name="Gilled Chicken"
-      price={1100}
-      rating={4.1}
-      size={1100}
-    />
-    <FoodCard
-      image={GilledChicken}
-      name="Gilled Chicken"
-      price={1100}
-      rating={4.1}
-      size={1100}
-    />
-    <FoodCard
-      image={GilledChicken}
-      name="Gilled Chicken"
-      price={1100}
-      rating={4.1}
-      size={1100}
-    />
-    <FoodCard
-      image={GilledChicken}
-      name="Gilled Chicken"
-      price={1100}
-      rating={4.1}
-      size={1100}
-    />
+    
   </div>
   );
 };
