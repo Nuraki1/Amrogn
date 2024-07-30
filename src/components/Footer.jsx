@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
               <a href="https://amrogn.com/" className="flex items-center">
-                  <img src={footerLogo} className="h-8 me-3" alt="FlowBite Logo" />
+                  <img src={footerLogo} className="h-8 mb-5" alt="Amrogn Chicken Logo" />
                   {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> */}
               </a>
           </div>
@@ -20,25 +20,25 @@ const Footer = () => {
                   <h2 className="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-white">Location-ቅርንጫፍ</h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                       <li className="mb-4">
-                          <a href="https://flowbite.com/" className="hover:underline">Mekanisa / መካኒሳ</a>
+                          <a href="https://Amrogn.com/" className="hover:underline">Mekanisa / መካኒሳ</a>
                       </li>
                       <li className='mb-4'>
                           <a href="https://tailwindcss.com/" className="hover:underline">Piassa / ፒያሳ</a>
                       </li>
                       <li className="mb-4">
-                          <a href="https://flowbite.com/" className="hover:underline">CMC / ሲኤምሲ</a>
+                          <a href="https://Amrogn.com/" className="hover:underline">CMC / ሲኤምሲ</a>
                       </li>
                       <li className="mb-4">
-                          <a href="https://flowbite.com/" className="hover:underline">4 Kilo / 4ኪሎ</a>
+                          <a href="https://Amrogn.com/" className="hover:underline">4 Kilo / 4ኪሎ</a>
                       </li>
                       <li className="mb-4">
-                          <a href="https://flowbite.com/" className="hover:underline">Bethel / ቤተል</a>
+                          <a href="https://Amrogn.com/" className="hover:underline">Bethel / ቤተል</a>
                       </li>
                       <li className="mb-4">
-                          <a href="https://flowbite.com/" className="hover:underline">Merkato / መርካቶ</a>
+                          <a href="https://Amrogn.com/" className="hover:underline">Merkato / መርካቶ</a>
                       </li>
                       <li className="mb-4">
-                          <a href="https://flowbite.com/" className="hover:underline">Kality / ቃሊቲ</a>
+                          <a href="https://Amrogn.com/" className="hover:underline">Kality / ቃሊቲ</a>
                       </li>
                   </ul>
                   {/* መካኒሳ
@@ -54,25 +54,25 @@ const Footer = () => {
                   <h2 className="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-white">Contacts - ስልክ</h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                       <li className="mb-4">
-                          <a href="https://github.com/themesberg/flowbite" className="hover:underline ">+251 903 464646</a>
+                          <a href="tel:+251903464646" className="hover:underline ">+251 903 464646</a>
                       </li>
                       <li className="mb-4">
-                          <a href="https://github.com/themesberg/flowbite" className="hover:underline ">+251 910 964646</a>
+                          <a href="tel:+251910964646" className="hover:underline ">+251 910 964646</a>
                       </li>
                       <li className="mb-4">
-                          <a href="https://github.com/themesberg/flowbite" className="hover:underline ">+251 986558355</a>
+                          <a href="tel:+251986558355" className="hover:underline ">+251 986 558355</a>
                       </li>
                       <li className="mb-4">
-                          <a href="https://github.com/themesberg/flowbite" className="hover:underline ">+251 903 464646</a>
+                          <a href="tel:+251903464646" className="hover:underline ">+251 903 464646</a>
                       </li>
                       <li className="mb-4">
-                          <a href="https://github.com/themesberg/flowbite" className="hover:underline ">+251 978367070</a>
+                          <a href="tel:251978367070" className="hover:underline ">+251 978367070</a>
                       </li>
                       <li className="mb-4">
-                          <a href="https://github.com/themesberg/flowbite" className="hover:underline ">+251 934 744242</a>
+                          <a href="tel:+251934744242" className="hover:underline ">+251 934 744242</a>
                       </li>
                       <li className="mb-4">
-                          <a href="https://github.com/themesberg/flowbite" className="hover:underline ">+251 903 464646</a>
+                          <a href="tel:+251903464646" className="hover:underline ">+251 903 464646</a>
                       </li>
                   </ul>
               </div>
