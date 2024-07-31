@@ -5,6 +5,7 @@ import Front from "./components/Front.jsx";
 import PopularMenu from "./components/PopularMenu.jsx";
 import { Example } from "./components/Example.jsx";
 import Footer from "./components/Footer.jsx";
+// import locali
 
 import burgerImage from "./images/burger.png";
 import friesImage from "./images/fries.png";
@@ -34,9 +35,7 @@ const App = () => {
   return (
     <>
       <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-        <div className="flex justify-start p-4">
-          <ThemeToggle />
-        </div>
+      
 
         <div>
           <Front />

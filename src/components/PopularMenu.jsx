@@ -52,13 +52,20 @@ const PopularMenu = () => {
       rating={4.5}
       size= "chicken, bread , fries, sauce"
     />
-    <FoodCard
+     <FoodCard
+      image={Aroasted}
+      name="Roasted Chicken"
+      price={1100}
+      rating={4.1}
+      size= "Full"
+    />
+    {/* <FoodCard
       image={roastedChicken}
       name="Roasted Chicken"
       price={1250}
       rating={4.1}
       size= "Full "
-    />
+    /> */}
     <FoodCard
       image={Shawarma}
       name="Chicken Shawarma"
@@ -84,8 +91,8 @@ const PopularMenu = () => {
       image={ChickenWing}
       name="Chicken Wings"
       price={440}
-      rating={4.1}
-      size={1100}
+      rating = {5}
+      size="Full "
     />
     <FoodCard
       image={ChickenMofo}
@@ -115,13 +122,7 @@ const PopularMenu = () => {
       rating={4.1}
       size={1100}
     />
-    <FoodCard
-      image={Aroasted}
-      name="Roasted Chicken"
-      price={1100}
-      rating={4.1}
-      size= "Full"
-    />
+   
     
   </div>
   );

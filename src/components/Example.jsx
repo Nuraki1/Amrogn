@@ -41,7 +41,7 @@ const LinksOverlay = () => {
   const [hoveredImage, setHoveredImage] = useState(null);
 
   return (
-    <nav className="fixed right-4 top-4 z-40 h-[calc(100vh_-_32px)] w-[calc(100%_-_32px)] overflow-hidden">
+    <nav className="fixed right-5 top-4 z-40 h-[calc(100vh_-_32px)] w-[calc(100%_-_32px)] overflow-hidden">
       {/* <Logo /> */}
       <NavLogo />
       <LinksContainer setHoveredImage={setHoveredImage} />
@@ -171,7 +171,7 @@ const HamburgerButton = ({ active, setActive }) => {
         initial={false}
         animate={active ? "open" : "closed"}
         variants={UNDERLAY_VARIANTS}
-        style={{ top: 23, right: 15 }}
+        style={{ top: 50, right: 30 }}
         className="fixed z-5 rounded-xl bg-gradient-to-br from-customYellow to-customRed shadow-lg shadow-violet-800/20"
       />
       <motion.button
@@ -183,7 +183,7 @@ const HamburgerButton = ({ active, setActive }) => {
         }`}
       >
         <div className="w-9 relative overflow-visible">
-          <div className="flex justify-center mb-16">
+          <div className="flex justify-center mb-19 mr-6">
             <img
               src={Placeholder}
               // alt={name}

@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa"; // Import icon for "View More" button
 import ThemeToggle from "../components/ThemeToggle.jsx"
+import '../App.css';
 const CategoryCard = ({ image, name }) => {
   return (
     <div className="flex flex-col items-center">

@@ -1,58 +1,90 @@
-import React from 'react';
-import deliveryImage from '../images/AmrognLogo2.png'; // Adjust the path to your image
-import { FaUserFriends } from 'react-icons/fa'; // Import icon for enrollment count
-import call from '../images/call.png'
+// src/pages/Front.jsx
+import React, { useState } from 'react';
+import Logo from '../images/mainLogo2.png';
+import { FaUserFriends } from 'react-icons/fa';
+import { FaLock } from 'react-icons/fa';
+import LocalizationToggle from '../components/LocalizationToggle.jsx';
+import '../App.css';
 
 const Front = () => {
+  const [isEnglish, setIsEnglish] = useState(true);
+
+  const handleLanguageChange = (language) => {
+    setIsEnglish(language);
+  };
+
   return (
+    <>
+  
     <div className="bg-customCream dark:bg-gray-900 text-black dark:text-white min-h-screen p-8">
+         <div className="ml-3 mt-0 md:mt-0">
+            <LocalizationToggle onLanguageChange={handleLanguageChange} />
+          </div>
       <div className="flex flex-col md:flex-row justify-between items-center">
         <div className="md:w-1/2">
-          <img src={deliveryImage} alt="Delivery" className="w-full h-auto dark:bg-gray-900" />
+          <img src={Logo} alt="Delivery" className="w-full h-auto dark:bg-gray-900" />
         </div>
         <div className="text-center md:text-left mb-8 md:mb-0 md:w-1/2">
-          <h1 className="poppins-extrabold text-4xl font-bold mb-4">We Provide <span className="text-customRed dark:text-red-400">Super Fast</span> Delivery Service</h1>
-         
-            <h1 className="text-4xl font-bold mb-4"> ፈጣን<span className="text-customRed dark:text-red-400"> መስተንግዶ </span>ባሉበት ሆነው ይዘዙን </h1>
+          <h1 className="poppins-extrabold text-4xl font-bold mb-4">
+            {isEnglish ? 'Super Fast' : 'ፈጣን'}{' '}
+            <span className="text-customRed dark:text-red-400">{isEnglish ? 'Service' : 'መስተንግዶ'}</span> {isEnglish ? 'Order Now' : 'ባሉበት ሆነው ይዘዙን'}
+          </h1>
         </div>
+       
       </div>
       <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-        <ServiceCard title="Online Order" description="Online Ordering" badgeText="Comming Soon" />
-        <ServiceCard title="Available on beU" description="For Fast Delivery" badgeText2="Delivery"  />
-        <ServiceCard title="We Are Any Where" description="8+ branches in Addis" badgeText2="Places" />
-        <ServiceCard title="Contact Number" description="09" badgeText2="contact"  />
+        <ServiceCard
+          title={isEnglish ? "Online Order" : "ኦንላይን ትዕዛዝ"}
+          description={isEnglish ? "Online Ordering" : "ኦንላይን ላይ ይዘዙ "}
+          badgeText={
+            
+            <span className='badge-content'>
+
+              {isEnglish ? "Coming Soon" : "በቅርቡ"} <FaLock style={{ marginLeft: '8px' }} />
+            </span>
+            
+          
+          }
+          
+        />
+        <ServiceCard
+          title={isEnglish ? "Available on beU" : "beU ላይ እንገኛለን"}
+          description={isEnglish ? "For Fast Delivery" : "ለፈጣን አድራሽ"}
+          badgeText={isEnglish ? "Delivery" : "መላኪያ"}
+          link="https://instagram.fadd1-1.fna.fbcdn.net/v/t39.30808-6/384736789_17975076464568831_4325980684139093268_n.jpg?stp=dst-jpg_e35_s1080x1080_sh0.08&_nc_ht=instagram.fadd1-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=HG_m_S3_6mAQ7kNvgH7L4UM&gid=65e1c0f8a05f41c2a351f3ec94de8fb7&edm=ANTKIIoAAAAA&ccb=7-5&oh=00_AYDWP73AUHB5u0Tr3WG7RhmpkaKs615ZTgA1j57CwuFNXw&oe=66B095DC&_nc_sid=d885a2"
+        />
+        <ServiceCard
+          title={isEnglish ? "We Are Anywhere" : "እኛ በብዙ ቅርንጫፎች እንገኛለን"}
+          description={isEnglish ? "8+ branches in Addis" : "ከ 8+ ቅርንጫፎች በአዲስ አበባ"}
+          badgeText={isEnglish ? "Places" : "ቅርንጫፍ"}
+          link="#footer"
+        />
+        <ServiceCard
+          title={isEnglish ? "Contact Us" : "በዚ ቁጥር ያግኙን "}
+          description={isEnglish ? "Call and Order Now" : "ይደውሉና ይዘዙ"}
+          badgeText={isEnglish ? "Contact" : "ስልክ"}
+          link="#footer"
+        />
       </div>
     </div>
+    </>
   );
 };
 
-
-
-const ServiceCard = ({ title, description, badgeText, badgeText2 }) => {
+const ServiceCard = ({ title, description, badgeText, link }) => {
   return (
-    <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center relative">
-      <div className="absolute top-0 left-0 border-black bg-customRed dark:bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">
-        {badgeText}
-        
-          {/* <img src={call} alt="Badge" className="w-4 h-4 inline-block mr-1" /> */}
+    <a href={link} className="block transform transition-transform hover:scale-105">
+      <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl text-center relative">
+        <div className="absolute top-0 left-0 border-black bg-customRed dark:bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">
+          {badgeText}
+        </div>
+        <h2 className="text-lg font-semibold mb-2 mt-2">{title}</h2>
+        <p className="text-gray-600 dark:text-gray-300">{description}</p>
       </div>
-      <div className="absolute top-0 left-0 border-black bg-customYellow  text-gray-800 text-xs font-bold px-2 py-1 rounded">
-        {badgeText2}
-        
-          {/* <img src={call} alt="Badge" className="w-4 h-4 inline-block mr-1" /> */}
-      </div>
-      <h2 className="text-lg font-semibold mb-2 mt-2">{title}</h2>
-      <p className="text-gray-600 dark:text-gray-300">{description}</p>
-    </div>
+    </a>
+      
+   
   );
 };
-// const ServiceCard = ({ title, description }) => {
-//   return (
-//     <div className="bg-white p-4 rounded-lg shadow-md text-center">
-//       <h2 className="text-lg font-semibold mb-2">{title}</h2>
-//       <p className="text-gray-600">{description}</p>
-//     </div>
-//   );
-// };
 
 export default Front;
