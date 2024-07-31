@@ -49,7 +49,7 @@ const LinksOverlay = () => {
         <motion.img
           src={hoveredImage}
           alt="Hovered"
-          className="absolute top-8 right-10 w-60 h-50 border-2 border-black rounded-lg object-contain"
+          className="absolute top-8 right-10 w-60 h-30 border-2 border-black rounded-lg object-contain"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -67,7 +67,7 @@ const LinksContainer = ({ setHoveredImage }) => {
         <FaMapMarkerAlt className="text-gray-600" />
         <p className="text-gray-900">8+ branches in Addis</p>
       </div>
-      <motion.div className="font-mono space-y-2 p-6 pl-6 md:pl-20" style={{ cursor: 'pointer' }}>
+      <motion.div className="poppins-extrabold space-y-3 p-6 pl-6 md:pl-20" style={{ cursor: 'pointer' }}>
         {LINKS.map((l, idx) => {
           return (
             <div key={l.title} className="flex items-center space-x-2">
@@ -172,7 +172,7 @@ const HamburgerButton = ({ active, setActive }) => {
         animate={active ? "open" : "closed"}
         variants={UNDERLAY_VARIANTS}
         style={{ top: 23, right: 15 }}
-        className="fixed z-10 rounded-xl bg-gradient-to-br from-customYellow to-customRed shadow-lg shadow-violet-800/20"
+        className="fixed z-5 rounded-xl bg-gradient-to-br from-customYellow to-customRed shadow-lg shadow-violet-800/20"
       />
       <motion.button
         initial={false}
@@ -184,14 +184,14 @@ const HamburgerButton = ({ active, setActive }) => {
       >
         <div className="w-9 relative overflow-visible">
           <div className="flex justify-center mb-16">
-            {/* <img
+            <img
               src={Placeholder}
               // alt={name}
-              className="w-32 h-32 object-contain absolute -top-12"
-            /> */}
-            <div className="absolute top-0 right-0 transform translate-x-3 translate-y-3 animate-bounce">
+              className="w-32 h-32 object-contain absolute -top-10 animate-bounce"
+            />
+            {/* <div className="absolute top-0 right-0 transform translate-x-3 translate-y-3 animate-bounce">
               <FaMapPin className="w-8 h-8 text-customRed" />
-            </div>
+            </div> */}
           </div>
         </div>
         {/* <img src={Placeholder} alt="" />

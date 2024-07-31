@@ -1,5 +1,6 @@
 import React from 'react';
 import FoodCard from './FoodCard';
+
 import bgImage from '../images/yellowPaint.jpg'
 import ChickenBurger from '../images/menu/chickenBurger.png';
 import roastedChicken from '../images/menu/roastedChicken.png';
@@ -14,9 +15,9 @@ import Fajitah from '../images/menu/fajitah.png';
 import Aroasted from '../images/AroastedFull.png';
 
 // import Shawarma from '../images/shawarma2.png';
-
+import { GiFoodTruck } from 'react-icons/gi';
 import { FaBook } from 'react-icons/fa'; // Import the FaBook icon
-
+import { GiKnifeFork } from 'react-icons/gi';
 
 
 const PopularMenu = () => {
@@ -36,14 +37,11 @@ const PopularMenu = () => {
     {/* Head of the menu */}
 
 <div className="w-full mb-8 relative">
-  <h2 className="text-3xl font-extrabold text-gray-700 dark:text-gray-900 text-center relative z-10 inline-block text-transparent bg-clip-text">
+  <h2 className="text-3xl font-extrabold text-black dark:text-gray-900  bg-clip-text">
     Our Popular Menu
   </h2>
-  <div className="absolute top-0 left-0 right-0 h-full flex items-center justify-center">
-    {/* <div className="w-24 h-1 bg-gradient-to-r from-red-400 via-pink-500 to-purple-500 rounded-full shadow-lg"></div> */}
-  </div>
   <div className="absolute top-0 right-0 transform translate-x-3 translate-y-3 animate-bounce">
-    <FaBook className="w-6 h-6 text-customRed" />
+    <GiKnifeFork className="w-10 h-10 font-extrabold text-customRed" />
   </div>
 </div>
 
