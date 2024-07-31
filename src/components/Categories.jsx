@@ -7,7 +7,10 @@ const CategoryCard = ({ image, name }) => {
     <div className="flex flex-col items-center">
       {/* <p className="mt-2 mb-0 text-center text-sm text-white">{name}</p> */}
       <div className="bg-gray-900 dark:bg-gray-600 rounded-full p-3 w-16 h-16 flex items-center justify-center">
-        <img src={image} alt={name} className="w-16 h-16 object-contain" />
+        <a link="burger">
+
+        <img src={image} alt={name} className="w-15 h-15 object-contain" />
+        </a>
       </div>
     </div>
   );
@@ -45,7 +48,7 @@ const Categories = ({ categories }) => {
 
       <div className="flex justify-between items-center mb-4">
         <div>
-          <h2 className="text-2xl font-bold">Categories</h2>
+          <h2 className="text-2xl poppins-semibold">Categories</h2>
         </div>
         {/* <div >
           <ThemeToggle />

@@ -1,5 +1,6 @@
 import React from 'react';
 import FoodCard from './FoodCard';
+import '../App.css';
 
 import bgImage from '../images/yellowPaint.jpg'
 import ChickenBurger from '../images/menu/chickenBurger.png';
@@ -36,9 +37,9 @@ const PopularMenu = () => {
     </div> */}
     {/* Head of the menu */}
 
-<div className="w-full mb-8 relative">
-  <h2 className="text-3xl font-extrabold text-black dark:text-gray-900  bg-clip-text">
-    Our Popular Menu
+<div id='burger' className="w-full poppins-bold mb-8 relative">
+  <h2 className="text-3xl text-black dark:text-gray-900 pr-3 ">
+     Popular Menu
   </h2>
   <div className="absolute top-0 right-0 transform translate-x-3 translate-y-3 animate-bounce">
     <GiKnifeFork className="w-10 h-10 font-extrabold text-customRed" />
