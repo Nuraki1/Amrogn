@@ -5,6 +5,7 @@ import Front from "./components/Front.jsx";
 import PopularMenu from "./components/PopularMenu.jsx";
 import { Example } from "./components/Example.jsx";
 import Footer from "./components/Footer.jsx";
+import MenuList from "./components/MenuList.jsx";
 // import locali
 
 import burgerImage from "./images/burger.png";
@@ -20,15 +21,15 @@ import shawarma from "./images/menu/shawarma.png";
 import './App.css';
 
 const categoryData = [
-  { image: burgerImage, name: "Burger" },
-  { image: Chicken, name: "Chicken" },
-  { image: friesImage, name: "Fries" },
+  { image: Chicken, name: "Chicken",link:"#chicken" },
+  { image: shawarma, name: "Shawarma", link:"#shawarma" },
+  { image: burgerImage, name: "Burger", link:"#burger" },
+  { image: friesImage, name: "Fries", },
   { image: soupImage, name: "Soup" },
   { image: sandwichImage, name: "Sandwich" },
-  { image: shawarma, name: "Sawarma" },
   { image: cakeImage, name: "Cake" },
   { image: hot, name: "Hot Drinks" },
-  { image: soft, name: "Soft Drinks" },
+  { image: soft, name: "Soft Drinks", link:"soft" },
 ];
 
 const App = () => {
@@ -47,6 +48,10 @@ const App = () => {
 
         <div>
           <PopularMenu />
+        </div>
+
+        <div>
+          <MenuList/>
         </div>
 
         <Example />

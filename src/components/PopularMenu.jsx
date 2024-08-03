@@ -6,9 +6,9 @@ import bgImage from '../images/yellowPaint.jpg'
 import ChickenBurger from '../images/menu/chickenBurger.png';
 import roastedChicken from '../images/menu/roastedChicken.png';
 import Shawarma from '../images/menu/chickenShawarma.png';
-import FriedChicken from '../images/menu/friedChicken.png';
+import FriedChicken from '../images/menu/friedChicken2.png';
 import ChickenKabsa from '../images/menu/Akabsa.png';
-import ChickenWing from '../images/menu/wingss.png';
+import ChickenWing from '../images/menu/wing4.png';
 import ChickenMofo from '../images/menu/chickenMofo.png';
 import GrilledChicken from '../images/menu/grilledChicken.png';
 import ShawarmaPlate from '../images/shawarmaPlate2.png';
@@ -37,12 +37,12 @@ const PopularMenu = () => {
     </div> */}
     {/* Head of the menu */}
 
-<div id='burger' className="w-full poppins-bold mb-8 relative">
+<div className="w-full poppins-bold mb-8 pt-32 relative">
   <h2 className="text-3xl text-black dark:text-gray-900 pr-3 ">
      Popular Menu
   </h2>
   <div className="absolute top-0 right-0 transform translate-x-3 translate-y-3 animate-bounce">
-    <GiKnifeFork className="w-10 h-10 font-extrabold text-customRed" />
+    <GiKnifeFork className="w-10 h-10 pt-32 font-extrabold text-customRed" />
   </div>
 </div>
 

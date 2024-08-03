@@ -9,9 +9,9 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 import deliveryImage from "../images/AmrognLogo2.png";
 import Image from "../images/menu/chickenFajita.png";
 import Placeholder from "../images/placeholder.png";
-import branchCmc from "../images/branch.jpg";
-import branch2 from "../images/branch2.jpg";
-import branch4Kilo from "../images/branch4Kilo.jpg";
+import branchCmc from "../images/branchCMC.png";
+import branch2 from "../images/branchCMC.png";
+import branch4Kilo from "../images/branch4Kilo2.jpg";
 import branchMerkato from "../images/branchMerkato.jpg";
 import branchPiassa from "../images/branchPiassa.jpg";
 import branchMekanisa from "../images/branchMekanisa.jpg";
@@ -49,7 +49,7 @@ const LinksOverlay = () => {
         <motion.img
           src={hoveredImage}
           alt="Hovered"
-          className="absolute top-8 right-10 w-60 h-30 border-2 border-black rounded-lg object-contain"
+          className="absolute bottom-2 right-50% w-60 h-30 border-2 border-black rounded-lg object-contain"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -128,7 +128,8 @@ const NavLink = ({ children, href, idx, image, setHoveredImage }) => {
 
 const NavLogo = () => {
   return (
-    <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/6">
+    // sm:w-1/2 md:w-1/4 lg:w-1/6
+    <div className="w-full ">
       <img
         src={deliveryImage}
         alt="Delivery"
@@ -139,30 +140,30 @@ const NavLogo = () => {
   );
 };
 
-const Logo = () => {
-  // Temp logo from https://logoipsum.com/
-  return (
-    <motion.a
-      initial={{ opacity: 0, y: -12 }}
-      animate={{
-        opacity: 1,
-        y: 0,
-        transition: { delay: 0.5, duration: 0.5, ease: "easeInOut" },
-      }}
-      exit={{ opacity: 0, y: -12 }}
-      href="#"
-      className="grid h-18 w-18 place-content-center rounded-br-xl rounded-tl-xl bg-customYellow transition-colors"
-    >
-      <div className="md:w-1/2">
-        <img
-          src={deliveryImage}
-          alt="Delivery"
-          className=" h-auto object-contain absolute -top-12"
-        />
-      </div>
-    </motion.a>
-  );
-};
+// const Logo = () => {
+//   // Temp logo from https://logoipsum.com/
+//   return (
+//     <motion.a
+//       initial={{ opacity: 0, y: -12 }}
+//       animate={{
+//         opacity: 1,
+//         y: 0,
+//         transition: { delay: 0.5, duration: 0.5, ease: "easeInOut" },
+//       }}
+//       exit={{ opacity: 0, y: -12 }}
+//       href="#"
+//       className="grid h-18 w-18 place-content-center rounded-br-xl rounded-tl-xl bg-customYellow transition-colors"
+//     >
+//       <div className="md:w-1/2">
+//         <img
+//           src={deliveryImage}
+//           alt="Delivery"
+//           className=" h-auto object-contain absolute -top-12"
+//         />
+//       </div>
+//     </motion.a>
+//   );
+// };
 
 const HamburgerButton = ({ active, setActive }) => {
   return (
@@ -198,15 +199,15 @@ const HamburgerButton = ({ active, setActive }) => {
          */}
         {/* <motion.span
           variants={HAMBURGER_VARIANTS.top}
-          className="absolute block h-1 w-10 bg-white"
+          className="absolute block h-1 w-8 bg-customRed"
           style={{ y: "-50%", left: "50%", x: "-50%" }}
         />
         <motion.span
           variants={HAMBURGER_VARIANTS.middle}
-          className="absolute block h-1 w-10 bg-white"
+          className="absolute block h-1 w-8 bg-customRed"
           style={{ left: "50%", x: "-50%", top: "50%", y: "-50%" }}
-        />
-        <motion.span
+        /> */}
+        {/* <motion.span
           variants={HAMBURGER_VARIANTS.bottom}
           className="absolute block h-1 w-5 bg-white"
           style={{ x: "-50%", y: "50%" }}
@@ -219,7 +220,7 @@ const HamburgerButton = ({ active, setActive }) => {
 const FooterCTAs = () => {
   return (
     <>
-      <div className="absolute bottom-6 left-6 flex gap-4 md:flex-col">
+      <div className="absolute bottom-6 left-6 flex flex-col gap-4 md:flex-col">
         {SOCIAL_CTAS.map((l, idx) => {
           return (
             <motion.a
@@ -243,6 +244,7 @@ const FooterCTAs = () => {
         })}
       </div>
       <motion.button
+      link="#footer" 
         initial={{ opacity: 0, y: 8 }}
         animate={{
           opacity: 1,
@@ -256,7 +258,7 @@ const FooterCTAs = () => {
         exit={{ opacity: 0, y: 8 }}
         className="absolute bottom-2 right-2 flex items-center gap-2 rounded-full px-3 py-3 text-4xl uppercase text-white transition-colors hover:bg-red-500 hover:text-white"
       >
-        <FiArrowRight />
+        <FiPhone />
       </motion.button>
     </>
   );
@@ -278,11 +280,6 @@ const LINKS = [
     href: "https://www.google.com/maps/dir//2V82%2BWHJ+Amrogn+Chicken+(CMC),+Addis+Ababa/@9.0178516,38.8514864,15z/data=!4m9!4m8!1m0!1m5!1m1!1s0x164b9bfe0fcb5e7d:0x28469f0a408bc3bd!2m2!1d38.8514907!2d9.0178515!3e0?entry=ttu",
     image: branchCmc,
   },
-  // {
-  //   title: "Amroኝ Sarbet/ሳርቤት",
-  //   href: "#",
-  //   image: branch,
-  // },
   {
     title: "Amroኝ 4kilo/4ኪሎ",
     href: "https://www.google.com/maps/dir/8.9074185,38.7604635/2QJ7%2BQ78+Ambassador+Mall+%7C+4+KILO+%7C+%E1%8A%A0%E1%88%9D%E1%89%A3%E1%88%B3%E1%8B%B0%E1%88%AD+%E1%88%9E%E1%88%8D+%7C+4+%E1%8A%AA%E1%88%8E,+Addis+Ababa/@8.9699816,38.6689037,12z/data=!3m1!4b1!4m18!1m7!3m6!1s0x164b859797149b25:0x2bea4652ce50614!2zQW1iYXNzYWRvciBNYWxsIHwgNCBLSUxPIHwg4Yqg4Yid4Ymj4Yiz4Yuw4YitIOGInuGIjSB8IDQg4Yqq4YiO!8m2!3d9.0319229!4d38.7631891!16s%2Fg%2F11kqs8yqv1!4m9!1m1!4e1!1m5!1m1!1s0x164b859797149b25:0x2bea4652ce50614!2m2!1d38.7631891!2d9.0319229!3e0?entry=ttu",
