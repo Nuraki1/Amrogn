@@ -6,15 +6,15 @@ import PopularMenu from "./components/PopularMenu.jsx";
 import { Example } from "./components/Example.jsx";
 import Footer from "./components/Footer.jsx";
 import MenuList from "./components/MenuList.jsx";
+import SpinningLogos from "./components/spinningLogos.jsx"
 // import locali
 
 import burgerImage from "./images/burger.png";
 import friesImage from "./images/fries.png";
-import soupImage from "./images/soup.png";
-import sandwichImage from "./images/sandwich.png";
-// import iceCreamImage from "./images/icecream.png";
-import cakeImage from "./images/cake.png";
-import hot from "./images/coffee.png";
+import takeAway from "./images/takeAway.png";
+import extra from "./images/extra.png";
+import salad from "./images/salad.png";
+import strawberry from "./images/strawberry.png";
 import soft from "./images/cola.png";
 import Chicken from "./images/logos.png";
 import shawarma from "./images/menu/shawarma.png";
@@ -24,12 +24,12 @@ const categoryData = [
   { image: Chicken, name: "Chicken",link:"#chicken" },
   { image: shawarma, name: "Shawarma", link:"#shawarma" },
   { image: burgerImage, name: "Burger", link:"#burger" },
-  { image: friesImage, name: "Fries", },
-  { image: soupImage, name: "Soup" },
-  { image: sandwichImage, name: "Sandwich" },
-  { image: cakeImage, name: "Cake" },
-  { image: hot, name: "Hot Drinks" },
-  { image: soft, name: "Soft Drinks", link:"soft" },
+  { image: salad, name: "Salad", link:"#salad" },
+  { image: friesImage, name: "Fries", link:"#extras" },
+  { image: soft, name: "Soft Drinks", link:"#juice" },
+  { image: strawberry, name: "Juice", link:"#juice" },
+  { image: extra, name: "Extra", link:"#extras" },
+  { image: takeAway, name: "TakeAway", link:"#takeaway" },
 ];
 
 const App = () => {
@@ -49,6 +49,10 @@ const App = () => {
         <div>
           <PopularMenu />
         </div>
+
+        {/* <div>
+          <SpinningLogos/>
+        </div> */}
 
         <div>
           <MenuList/>
