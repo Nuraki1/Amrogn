@@ -2,7 +2,7 @@ import React from 'react';
 import FoodCard from './FoodCard';
 import '../App.css';
 
-import bgImage from '../images/yellowPaint.jpg'
+import bgImage from '../images/yellowPaint2.jpg'
 import ChickenBurger from '../images/menu/chickenBurger.png';
 import roastedChicken from '../images/menu/roastedChicken.png';
 import Shawarma from '../images/menu/chickenShawarma.png';
@@ -123,6 +123,9 @@ const PopularMenu = () => {
       rating={4.1}
       size={1100}
     />
+
+{/* <hr class="border-t border-gray-300 w-1/2 mx-auto" /> */}
+
    
     
   </div>

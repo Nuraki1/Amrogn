@@ -9,7 +9,7 @@ const Footer = () => {
     <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-              <a href="https://amrogn.com/" className="flex items-center">
+              <a href="#" className="flex items-center">
                   <img src={footerLogo} className="h-8 mb-5" alt="Amrogn Chicken Logo" />
                   {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> */}
               </a>
@@ -19,26 +19,24 @@ const Footer = () => {
                   <h2 className="mb-6 text-sm font-bold text-gray-900  dark:text-white">Location-ቅርንጫፍ</h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                       <li className="mb-4">
-                          <a href="https://Amrogn.com/" className="hover:underline">Mekanisa / መካኒሳ</a>
+                          <a href="#" className="hover:underline">Mekanisa / መካኒሳ</a>
                       </li>
                       <li className='mb-4'>
                           <a href="https://tailwindcss.com/" className="hover:underline">Piassa / ፒያሳ</a>
                       </li>
                       <li className="mb-4">
-                          <a href="https://Amrogn.com/" className="hover:underline">CMC / ሲኤምሲ</a>
+                          <a href="#" className="hover:underline">CMC / ሲኤምሲ</a>
                       </li>
                       <li className="mb-4">
-                          <a href="https://Amrogn.com/" className="hover:underline">4 Kilo / 4ኪሎ</a>
+                          <a href="#" className="hover:underline">4 Kilo / 4ኪሎ</a>
                       </li>
                       <li className="mb-4">
-                          <a href="https://Amrogn.com/" className="hover:underline">Bethel / ቤተል</a>
+                          <a href="#" className="hover:underline">Bethel / ቤተል</a>
                       </li>
                       <li className="mb-4">
-                          <a href="https://Amrogn.com/" className="hover:underline">Merkato / መርካቶ</a>
+                          <a href="#" className="hover:underline">Merkato / መርካቶ</a>
                       </li>
-                      <li className="mb-4">
-                          <a href="https://Amrogn.com/" className="hover:underline">Kality / ቃሊቲ</a>
-                      </li>
+                   
                   </ul>
                   {/* መካኒሳ
 ፒያሳ

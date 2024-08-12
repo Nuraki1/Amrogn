@@ -60,69 +60,84 @@ const LinksOverlay = () => {
   );
 };
 
+
 const LinksContainer = ({ setHoveredImage }) => {
   return (
     <>
       <div className="flex items-start justify-center md:justify-start space-x-2">
-        <FaMapMarkerAlt className="text-gray-600" />
-        <p className="text-gray-900">8+ branches in Addis</p>
+        <FaMapMarkerAlt className="text-gray-900" />
+        <p className="text-gray-900">6+ branches in Addis</p>
       </div>
-      <motion.div className="poppins-extrabold space-y-3 p-6 pl-6 md:pl-20" style={{ cursor: 'pointer' }}>
-        {LINKS.map((l, idx) => {
-          return (
-            <div key={l.title} className="flex items-center space-x-2">
-              <NavLink
-                href={l.href}
-                idx={idx}
-                image={l.image}
-                setHoveredImage={setHoveredImage}
-              >
-                {l.title}
-              </NavLink>
-              <img src={map} width="25px" height="25px" alt="Map Icon" />
-            </div>
-          );
-        })}
+      <motion.div
+        className="poppins-extrabold grid grid-cols-2 md:grid-cols-3 sm:grid-cols-4 gap-4 p-6 pl-15 md:pl-15 sm:pl-20"
+        style={{ cursor: 'pointer' }}
+      >
+        
+        {LINKS.map((l, idx) => (
+          <div key={l.title} className="flex items-center space-x-3">
+            <NavLink
+              href={l.href}
+              idx={idx}
+              image={l.image}
+              setHoveredImage={setHoveredImage}
+            >
+           <img src={map} width="40" height="40" alt="Map Icon" className="flex justify-center" />
+              {l.title}
+            </NavLink>
+            
+          </div>
+        ))}
       </motion.div>
     </>
   );
 };
 
 
-const NavLink = ({ children, href, idx, image, setHoveredImage }) => {
-  const [clickTimeout, setClickTimeout] = useState(null);
 
-  const handleClick = () => {
-    if (clickTimeout) {
-      clearTimeout(clickTimeout);
-      setClickTimeout(null);
-      window.open(href, "_blank");
-    } else {
-      setClickTimeout(setTimeout(() => {
-        setHoveredImage(image);
-        setClickTimeout(null);
-      }, 250));
-    }
+// const LinksContainer = ({ setHoveredImage }) => {
+//   return (
+//     <>
+//       <div className="flex items-start justify-center md:justify-start space-x-2">
+//         <FaMapMarkerAlt className="text-gray-600" />
+//         <p className="text-gray-900">6+ branches in Addis</p>
+//       </div>
+//       <motion.div className="poppins-extrabold space-y-3 p-6 pl-6 md:pl-20" style={{ cursor: 'pointer' }}>
+//         {LINKS.map((l, idx) => {
+//           return (
+//             <div key={l.title} className="flex items-center space-x-2">
+//               <NavLink
+//                 href={l.href}
+//                 idx={idx}
+//                 image={l.image}
+//                 setHoveredImage={setHoveredImage}
+//               >
+//                 {l.title}
+//               </NavLink>
+//               <img src={map} width="25px" height="25px" alt="Map Icon" />
+//             </div>
+//           );
+//         })}
+//       </motion.div>
+//     </>
+//   );
+// };
+
+
+
+const NavLink = ({ href, children }) => {
+  // Simplified handleClick function that directly opens the link
+  const handleClick = (event) => {
+    // Prevent the default action to stop showing the link inline
+    event.preventDefault();
+
+    // Open the link in a new tab
+    window.open(href, "_blank");
   };
 
   return (
-    <motion.a
-      initial={{ opacity: 0, y: -8 }}
-      animate={{
-        opacity: 1,
-        y: 0,
-        transition: {
-          delay: 0.75 + idx * 0.125,
-          duration: 0.5,
-          ease: "easeInOut",
-        },
-      }}
-      exit={{ opacity: 0, y: -8 }}
-      onClick={handleClick}
-      className="block font-semibold text-1xl md:text-3xl lg:text-2xl text-2sm  text-gray from-neutral-600 transition-colors hover:text-neutral-500"
-    >
+    <a href={href} onClick={handleClick} target="_blank" rel="noopener noreferrer">
       {children}
-    </motion.a>
+    </a>
   );
 };
 
@@ -140,30 +155,7 @@ const NavLogo = () => {
   );
 };
 
-// const Logo = () => {
-//   // Temp logo from https://logoipsum.com/
-//   return (
-//     <motion.a
-//       initial={{ opacity: 0, y: -12 }}
-//       animate={{
-//         opacity: 1,
-//         y: 0,
-//         transition: { delay: 0.5, duration: 0.5, ease: "easeInOut" },
-//       }}
-//       exit={{ opacity: 0, y: -12 }}
-//       href="#"
-//       className="grid h-18 w-18 place-content-center rounded-br-xl rounded-tl-xl bg-customYellow transition-colors"
-//     >
-//       <div className="md:w-1/2">
-//         <img
-//           src={deliveryImage}
-//           alt="Delivery"
-//           className=" h-auto object-contain absolute -top-12"
-//         />
-//       </div>
-//     </motion.a>
-//   );
-// };
+
 
 const HamburgerButton = ({ active, setActive }) => {
   return (
@@ -195,27 +187,12 @@ const HamburgerButton = ({ active, setActive }) => {
             </div> */}
           </div>
         </div>
-        {/* <img src={Placeholder} alt="" />
-         */}
-        {/* <motion.span
-          variants={HAMBURGER_VARIANTS.top}
-          className="absolute block h-1 w-8 bg-customRed"
-          style={{ y: "-50%", left: "50%", x: "-50%" }}
-        />
-        <motion.span
-          variants={HAMBURGER_VARIANTS.middle}
-          className="absolute block h-1 w-8 bg-customRed"
-          style={{ left: "50%", x: "-50%", top: "50%", y: "-50%" }}
-        /> */}
-        {/* <motion.span
-          variants={HAMBURGER_VARIANTS.bottom}
-          className="absolute block h-1 w-5 bg-white"
-          style={{ x: "-50%", y: "50%" }}
-        /> */}
       </motion.button>
     </>
   );
 };
+
+
 
 const FooterCTAs = () => {
   return (
@@ -295,11 +272,7 @@ const LINKS = [
     href: "https://www.google.com/maps/dir//2PJQ%2BRJM,+Addis+Ababa/@9.0321444,38.6567416,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x164b85582ea19511:0x42bfa14b77382442!2m2!1d38.7391435!2d9.0321536?entry=ttu",
     image: branchMerkato,
   },
-  {
-    title: "Amroኝ Kality/ቃሊቲ ",
-    href: "#",
-    image: branch2,
-  },
+ 
 ];
 
 const SOCIAL_CTAS = [

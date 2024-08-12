@@ -1,6 +1,11 @@
 import React, { useRef, useState, useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa"; // Import icon for "View More" button
 import ThemeToggle from "../components/ThemeToggle.jsx";
+import Cart from "../components/Cart.jsx"
+import { FaShoppingCart } from "react-icons/fa";
+
+
+
 
 import "../App.css";
 import { useNavigate } from 'react-router-dom';
@@ -68,12 +73,14 @@ const Categories = ({ categories }) => {
         <div>
           <h2 className="text-2xl poppins-semibold">Categories</h2>
         </div>
-        {/* <div >
-          <ThemeToggle />
-        </div> */}
         <span>
           <ThemeToggle />
         </span>
+
+        {/* <div >
+          <Cart />
+        </div> */}
+
         <button
           className="flex items-center space-x-2 text-white hover:text-white"
           onClick={() => scroll(200)}

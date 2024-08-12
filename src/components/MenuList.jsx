@@ -41,8 +41,10 @@ import { FaBook } from 'react-icons/fa'; // Import the FaBook icon
 import { GiKnifeFork } from 'react-icons/gi';
 
 
-const MenuList = () => {
+const MenuList = ({ incrementCounter }) => {
+  
   return (
+
     <div className="flex flex-wrap justify-center gap-4 p-10 "
     // style={{
     //     // backgroundImage: `url(${bgImage})`,
@@ -57,6 +59,24 @@ const MenuList = () => {
       <h2 className="text-3xl font-bold dark:text-black">Our Popular Menu</h2>
     </div> */}
     {/* Head of the menu */}
+
+    <div  id="shawarma" className="w-full poppins-bold mb-8 pt-32 relative">
+  <h2 className="text-3xl text-gray-700 dark:text-gray-200 pr-3 ">
+     Chicken Combo
+  </h2>
+  <div className="absolute top-0 right-0 transform translate-x-3 translate-y-3 animate">
+    <GiKnifeFork className="w-10 h-60 font-extrabold text-customRed" />
+  </div>
+</div>
+
+<FoodCard
+ image={AroastedFull}
+ name="Chicken combo"
+ price="1,299"
+ badgeText="combo of chicken"
+ size= "Double Quarter Leg, rice, Amrogn Sauce, Salad, Pita"
+ rating={5}
+/>
 
 <div id='chicken' className="w-full poppins-bold mb-8 pt-32 relative">
   <h2 className="text-3xl text-gray-700 dark:text-gray-200 pr-3 ">
@@ -141,6 +161,7 @@ const MenuList = () => {
       size="chicken, served with rice, Salad"
       rating={5}
     />
+<hr class="border-t-2 border-gray-900" />
 
 
 <div  id="shawarma" className="w-full poppins-bold mb-8 pt-32 relative">
