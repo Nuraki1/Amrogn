@@ -21,7 +21,7 @@ import { FaBook } from 'react-icons/fa'; // Import the FaBook icon
 import { GiKnifeFork } from 'react-icons/gi';
 
 
-const PopularMenu = () => {
+const PopularMenu = ({ incrementCounter, decrementCounter }) => {
   return (
     <div className="flex flex-wrap justify-center gap-4 p-10 "
     style={{
@@ -52,6 +52,8 @@ const PopularMenu = () => {
       price={390}
       rating={4.5}
       size= "chicken, bread , fries, sauce"
+      incrementCounter={() => incrementCounter({ image: ChickenBurger, name: "Chicken Burger", price: 390 })}
+      decrementCounter={() => decrementCounter({ image: ChickenBurger, name: "ChickenBurger", price: 390 })}
     />
      <FoodCard
       image={Aroasted}
@@ -59,6 +61,8 @@ const PopularMenu = () => {
       price={1100}
       rating={4.1}
       size= "Full"
+      incrementCounter={() => incrementCounter({ image: Aroasted, name: "Roasted Chicken", price: 390 })}
+      decrementCounter={() => decrementCounter({ image: Aroasted, name: "Roasted Chicken", price: 390 })}
     />
     {/* <FoodCard
       image={roastedChicken}
@@ -73,6 +77,8 @@ const PopularMenu = () => {
       price={285}
       rating={4.1}
       size={1100}
+      incrementCounter={() => incrementCounter({ image: Shawarma, name: "Chicken Shawarma", price: 285 })}
+      decrementCounter={() => decrementCounter({ image: Shawarma, name: "Chicken Shawarma", price: 285 })}
     />
     <FoodCard
       image={FriedChicken}
@@ -80,6 +86,8 @@ const PopularMenu = () => {
       price={550}
       rating={4.1}
       size={4 }
+      incrementCounter={() => incrementCounter({ image: FriedChicken, name: "Fried Chicken", price: 550 })}
+      decrementCounter={() => decrementCounter({ image: FriedChicken, name: "Fried Chicken", price: 550 })}
     />
     <FoodCard
       image={ChickenKabsa}
@@ -87,6 +95,8 @@ const PopularMenu = () => {
       price={470}
       rating={4.1}
       size={1100}
+      incrementCounter={() => incrementCounter({ image: ChickenKabsa, name: "Chicken Kabsa", price: 470 })}
+      decrementCounter={() => decrementCounter({ image: ChickenKabsa, name: "Chicken Kabsa", price: 470 })}
     />
     <FoodCard
       image={ChickenWing}
@@ -94,6 +104,8 @@ const PopularMenu = () => {
       price={440}
       rating = {5}
       size="Full "
+      incrementCounter={() => incrementCounter({ image: ChickenWing, name: "Chicken Wings", price: 440 })}
+      decrementCounter={() => decrementCounter({ image: ChickenWing, name: "Chicken Wings", price: 440 })}
     />
     <FoodCard
       image={ChickenMofo}
@@ -101,13 +113,17 @@ const PopularMenu = () => {
       price={1150}
       rating={4.1}
       size={1100}
+      incrementCounter={() => incrementCounter({ image: ChickenMofo, name: "Chicken Mofo", price: 1150 })}
+      decrementCounter={() => decrementCounter({ image: ChickenMofo, name: "Chicken Mofo", price: 1150 })}
     />
     <FoodCard
       image={ShawarmaPlate}
       name="Shawarma Plate"
       price={560}
       rating={4.1}
-      size={1100}
+      size={1100} 
+      incrementCounter={() => incrementCounter({ image: ShawarmaPlate, name: "Shawarma Plate", price: 560 })}
+      decrementCounter={() => decrementCounter({ image: ShawarmaPlate, name: "Shawarma Plate", price: 560 })}
     />
     <FoodCard
       image={GrilledChicken}
@@ -115,6 +131,8 @@ const PopularMenu = () => {
       price={1100}
       rating={4.1}
       size={1100}
+      incrementCounter={() => incrementCounter({ image: GrilledChicken, name: "Gilled Chicken", price: 390 })}
+      decrementCounter={() => decrementCounter({ image: GrilledChicken, name: "Gilled Chicken", price: 390 })}
     />
     <FoodCard
       image={Fajitah}
@@ -122,6 +140,8 @@ const PopularMenu = () => {
       price={580}
       rating={4.1}
       size={1100}
+      incrementCounter={() => incrementCounter({ image: Fajitah, name: "Fajitah", price: 580 })}
+      decrementCounter={() => decrementCounter({ image: Fajitah, name: "Fajitah", price: 580 })}
     />
 
 {/* <hr class="border-t border-gray-300 w-1/2 mx-auto" /> */}

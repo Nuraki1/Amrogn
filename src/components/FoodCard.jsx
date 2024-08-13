@@ -1,7 +1,27 @@
-import React from 'react';
-import { FaShoppingCart } from 'react-icons/fa'; // Import the shopping cart icon
+import React, {useState} from 'react';
+import { FaShoppingCart,  FaCheck } from 'react-icons/fa'; // Import the shopping cart icon
+import { MdRestaurant } from 'react-icons/md';
+// import { GiTray } from 'react-icons/gi';
+import { FaConciergeBell } from 'react-icons/fa';
+import { GiHotMeal } from 'react-icons/gi'; // Another icon from the Game Icons set.
+import { MdFastfood } from 'react-icons/md'; // A fast food icon from Material Design icons.
 
-const FoodCard = ({ image, name, price,size, rating, badgeText, incrementCounter }) => {
+
+
+
+const FoodCard = ({ image, name, price,size, rating, badgeText, incrementCounter, decrementCounter }) => {
+
+  const [isAdded, setIsAdded] = useState(false);
+
+  const handleToggle = () => {
+    if (isAdded) {
+      decrementCounter(); // Decrease the counter
+    } else {
+      incrementCounter(); // Increase the counter
+    }
+    setIsAdded(!isAdded); // Toggle the added state
+  };
+  
   return (
     <div className="bg-white dark:bg-gray-800 dark:text-white mb-10 text-black rounded-lg p-6 shadow-lg w-60 relative overflow-visible">
       <div className="flex justify-center mb-8">
@@ -19,8 +39,15 @@ const FoodCard = ({ image, name, price,size, rating, badgeText, incrementCounter
       <p className="text-center text-gray-400">{size}</p>
       <p className="text-center text-xl font-bold">{price} br</p>
       <div className="flex justify-end mt-4">
-        <button className="bg-customRed dark:bg-red-700  text-white px-4 py-2 rounded-md hover:bg-red-600 flex items-center justify-center" onClick={incrementCounter}>
-          <FaShoppingCart />
+      <button
+          onClick={handleToggle}
+          className={`px-4 py-2 rounded-md flex items-center justify-center ${
+            isAdded
+              ? 'bg-customYellow dark:bg-customYellow text-gray-800 dark:text-gray-800'
+              : 'bg-customRed dark:bg-red-700 text-white hover:bg-red-600'
+          }`}
+        >
+          {isAdded ? <FaCheck /> : <MdRestaurant />}
         </button>
 
         
