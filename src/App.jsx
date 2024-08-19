@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Categories from "./components/Categories.jsx";
-import ThemeToggle from "./components/ThemeToggle.jsx";
 import Front from "./components/Front.jsx";
 import PopularMenu from "./components/PopularMenu.jsx";
 import { Example } from "./components/Example.jsx";
 import Footer from "./components/Footer.jsx";
 import MenuList from "./components/MenuList.jsx";
-import SpinningLogos from "./components/spinningLogos.jsx";
 import Cart from "./components/Cart.jsx";
 import CartDropdown from "./components/CartDropdown.jsx";
+import Trial from "./components/Trial.jsx";
+
 
 import burgerImage from "./images/burger.png";
 import friesImage from "./images/fries.png";
@@ -19,6 +19,8 @@ import strawberry from "./images/strawberry.png";
 import soft from "./images/cola.png";
 import Chicken from "./images/logos.png";
 import shawarma from "./images/menu/shawarma.png";
+
+
 import "./App.css";
 
 const categoryData = [
@@ -37,16 +39,41 @@ const App = () => {
   const [counter, setCounter] = useState(0);
   const [cartItems, setCartItems] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+ 
+  
+const handleToggleDropdown = () => {
+  setIsDropdownOpen(!isDropdownOpen);
+};
 
-  const handleToggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
 
+const incremental = (item) => {
+  setCartItems(
+    cartItems.map((cartItem) =>
+      cartItem.name === item.name
+        ? { ...cartItem, quantity: cartItem.quantity + 1 }
+        : cartItem
+    )
+  );
+};
+
+const decremental = (item) => {
+  setCartItems(
+    cartItems.map((cartItem) =>
+      cartItem.name === item.name && cartItem.quantity > 1
+        ? { ...cartItem, quantity: cartItem.quantity - 1 }
+        : cartItem
+    )
+  );
+};
+
+
+  
   const incrementCounter = (item) => {
+
     setCounter(counter + 1);
-    const existingItem = cartItems.find(
-      (cartItem) => cartItem.name === item.name
-    );
+
+    const existingItem = cartItems.find ( (cartItem) => cartItem.name === item.name);
+
     if (existingItem) {
       setCartItems(
         cartItems.map((cartItem) =>
@@ -73,30 +100,34 @@ const App = () => {
     } else {
       const updatedCartItems = cartItems.map((cartItem) =>
         cartItem.name === item.name
-          ? { ...cartItem, quantity: cartItem.quantity - 1 }
-          : cartItem
-      );
-      setCartItems(updatedCartItems);
-      setCounter(counter - 1);
-    }
-  };
+      ? { ...cartItem, quantity: cartItem.quantity - 1 }
+      : cartItem
+    );
+    setCartItems(updatedCartItems);
+    setCounter(counter - 1);
+  }
+};
 
-  const totalPrice = cartItems.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );
+const totalPrice = cartItems.reduce(
+  (total, item) => total + item.price * item.quantity,
+  0
+);
 
-  return (
+
+return (
     <>
       <div className="relative">
         <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
           <div>
             <Front />
           </div>
+          
 
           <div className="sticky-categories">
             <Categories categories={categoryData} />
           </div>
+
+      
 
           <div>
             <PopularMenu
@@ -117,21 +148,22 @@ const App = () => {
               counter={counter}
               cartItems={cartItems}
               totalPrice={totalPrice}
-              onToggleDropdown={handleToggleDropdown}
+              // onToggleDropdown={handleToggleDropdown}
             />
           </div>
 
           {isDropdownOpen && (
             <CartDropdown
               cartItems={cartItems}
-              incrementItem={incrementCounter}
-              decrementItem={decrementCounter}
+              incremental={incremental}
+              decremental={decremental}
               totalPrice={totalPrice}
+              onClose={handleToggleDropdown} // Passing the toggle function
             />
           )}
 
           <Example />
-
+          
           <Footer />
         </div>
       </div>

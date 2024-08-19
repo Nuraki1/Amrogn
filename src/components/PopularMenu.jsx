@@ -2,7 +2,7 @@ import React from 'react';
 import FoodCard from './FoodCard';
 import '../App.css';
 
-import bgImage from '../images/yellowPaint2.jpg'
+import bgImage from '../images/yellowBg.png'
 import ChickenBurger from '../images/menu/chickenBurger.png';
 import roastedChicken from '../images/menu/roastedChicken.png';
 import Shawarma from '../images/menu/chickenShawarma.png';
@@ -38,8 +38,8 @@ const PopularMenu = ({ incrementCounter, decrementCounter }) => {
     {/* Head of the menu */}
 
 <div className="w-full poppins-bold mb-8 pt-32 relative">
-  <h2 className="text-3xl text-black dark:text-gray-900 pr-3 ">
-     Popular Menu
+  <h2 className="text-3xl text-black dark:text-gray-100 pr-3 ">
+     New Amrogn Lists
   </h2>
   <div className="absolute top-0 right-0 transform translate-x-3 translate-y-3 animate-bounce">
     <GiKnifeFork className="w-10 h-10 pt-32 font-extrabold text-customRed" />
@@ -53,7 +53,7 @@ const PopularMenu = ({ incrementCounter, decrementCounter }) => {
       rating={4.5}
       size= "chicken, bread , fries, sauce"
       incrementCounter={() => incrementCounter({ image: ChickenBurger, name: "Chicken Burger", price: 390 })}
-      decrementCounter={() => decrementCounter({ image: ChickenBurger, name: "ChickenBurger", price: 390 })}
+      decrementCounter={() => decrementCounter({ image: ChickenBurger, name: "Chicken Burger", price: 390 })}
     />
      <FoodCard
       image={Aroasted}

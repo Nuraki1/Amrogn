@@ -219,8 +219,8 @@ const MenuList = ({ incrementCounter, decrementCounter }) => {
         badgeText="100%"
         size="chicken, bread , fries, sauce"
         rating={5}
-        incrementCounter={incrementCounter}
-        decrementCounter={decrementCounter}
+        incrementCounter={() => incrementCounter({ image: ChickenBurger, name: "Chicken Burger", price: 390 })}
+      decrementCounter={() => decrementCounter({ image: ChickenBurger, name: "ChickenBurger", price: 390 })}
       />
 
       <FoodCard
