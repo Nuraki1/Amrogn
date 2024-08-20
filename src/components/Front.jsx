@@ -5,7 +5,11 @@ import Logo from '../images/mainLogo2.png';
 import { FaUserFriends } from 'react-icons/fa';
 import { FaLock } from 'react-icons/fa';
 import LocalizationToggle from '../components/LocalizationToggle.jsx';
+import './ServiceCard.css';
+import beu from "../images/beu-removed.png"
+
 import '../App.css';
+import { Place } from '@mui/icons-material';
 
 const Front = () => {
   const [isEnglish, setIsEnglish] = useState(true);
@@ -48,24 +52,28 @@ const Front = () => {
           
           }
           
+          
         />
         <ServiceCard
           title={isEnglish ? "Available on beU" : "beU ላይ እንገኛለን"}
           description={isEnglish ? "For Fast Delivery" : "ለፈጣን አድራሽ"}
           badgeText={isEnglish ? "Delivery" : "መላኪያ"}
           link="https://instagram.fadd1-1.fna.fbcdn.net/v/t39.30808-6/384736789_17975076464568831_4325980684139093268_n.jpg?stp=dst-jpg_e35_s1080x1080_sh0.08&_nc_ht=instagram.fadd1-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=HG_m_S3_6mAQ7kNvgH7L4UM&gid=65e1c0f8a05f41c2a351f3ec94de8fb7&edm=ANTKIIoAAAAA&ccb=7-5&oh=00_AYDWP73AUHB5u0Tr3WG7RhmpkaKs615ZTgA1j57CwuFNXw&oe=66B095DC&_nc_sid=d885a2"
+          // logo={beu}
         />
         <ServiceCard
           title={isEnglish ? "We Are Anywhere" : "በብዙ ቦታዎች እንገኛለን"}
-          description={isEnglish ? "8+ branches in Addis" : "ከ 8+ ቅርንጫፎች በአዲስ አበባ"}
+          description={isEnglish ? "6+ branches" : "ከ 6+ ቅርንጫፎች"}
           badgeText={isEnglish ? "Places" : "ቅርንጫፍ"}
           link="#footer"
+          // logo={Place}
         />
         <ServiceCard
           title={isEnglish ? "Contact Us" : "በዚ ቁጥር ያግኙን "}
           description={isEnglish ? "Call & Order Now" : "ደውለው ይዘዙ"}
           badgeText={isEnglish ? "Contact" : "ስልክ"}
           link="#footer"
+          // logo={contact}
         />
       </div>
     </div>
@@ -73,18 +81,20 @@ const Front = () => {
   );
 };
 
-const ServiceCard = ({ title, description, badgeText, link }) => {
+const ServiceCard = ({ title, description, badgeText, link, logo }) => {
   return (
     <a href={link} className="block transform transition-transform hover:scale-105">
-      <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl text-center relative">
-        <div className="absolute top-0 left-0 border-black bg-customRed dark:bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">
-          {badgeText}
-        </div>
-        <h2 className="text-lg font-semibold mb-2 mt-2">{title}</h2>
-        <p className="text-gray-600 dark:text-gray-300">{description}</p>
+    <div className="relative bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl text-center">
+      <div className="absolute top-0 left-0 border-black bg-customRed dark:bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">
+        {badgeText}
       </div>
-    </a>
-      
+      <h2 className="text-lg font-semibold mb-2 mt-2">{title}</h2>
+      <p className="text-gray-600 dark:text-gray-300">{description}</p>
+      {/* <div className="stamp-container">
+        <img src={logo} alt="Logo" className="stamp-logo" />
+      </div> */}
+    </div>
+  </a>
    
   );
 };

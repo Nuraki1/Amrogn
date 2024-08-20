@@ -148,6 +148,8 @@ return (
               counter={counter}
               cartItems={cartItems}
               totalPrice={totalPrice}
+              incremental={incremental}   // Pass incremental function
+              decremental={decremental}   // Pass decremental function
               // onToggleDropdown={handleToggleDropdown}
             />
           </div>
@@ -155,8 +157,8 @@ return (
           {isDropdownOpen && (
             <CartDropdown
               cartItems={cartItems}
-              incremental={incremental}
-              decremental={decremental}
+              increment={incremental}
+              decrement={decremental}
               totalPrice={totalPrice}
               onClose={handleToggleDropdown} // Passing the toggle function
             />

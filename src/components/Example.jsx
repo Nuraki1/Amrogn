@@ -345,3 +345,4 @@ const HAMBURGER_VARIANTS = {
     },
   },
 };
+ export default Example;
