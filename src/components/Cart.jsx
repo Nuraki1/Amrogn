@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import CartDropdown from './CartDropdown';
 
+
 const Cart = ({ counter, cartItems, totalPrice, incremental, decremental }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const cartRef = useRef(null); // Create a reference for the cart

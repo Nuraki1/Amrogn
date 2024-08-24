@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import FoodCard from "./FoodCard";
 import "../App.css";
 
@@ -37,13 +37,21 @@ import Mayo from "../images/mayo.png";
 import { GiFoodTruck } from "react-icons/gi";
 import { FaBook } from "react-icons/fa"; // Import the FaBook icon
 import { GiKnifeFork } from "react-icons/gi";
+// import '../components/Front.jsx';
+
 
 const MenuList = ({ incrementCounter, decrementCounter }) => {
+  const [isEnglish, setIsEnglish] = useState(true);
+
+  const handleLanguageChange = (language) => {
+    setIsEnglish(language);
+  };
+
   return (
     <div className="flex flex-wrap justify-center gap-4 p-10">
       <div id="" className="w-full poppins-bold mb-8 pt-32 relative">
         <h2 className="text-3xl text-gray-700 dark:text-gray-200 pr-3 ">
-          Chicken Combo
+          {isEnglish? "Chicken Combo" : "የዶሮ ኮምቦ"}
         </h2>
         <div className="absolute top-0 right-0 transform translate-x-3 translate-y-3 animate">
           <GiKnifeFork className="w-10 h-60 font-extrabold text-customRed" />

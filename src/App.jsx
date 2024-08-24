@@ -7,7 +7,6 @@ import Footer from "./components/Footer.jsx";
 import MenuList from "./components/MenuList.jsx";
 import Cart from "./components/Cart.jsx";
 import CartDropdown from "./components/CartDropdown.jsx";
-import Trial from "./components/Trial.jsx";
 
 
 import burgerImage from "./images/burger.png";
@@ -22,6 +21,7 @@ import shawarma from "./images/menu/shawarma.png";
 
 
 import "./App.css";
+import ScrollToTopButton from "./components/ScrollToTopButton.jsx";
 
 const categoryData = [
   { image: Chicken, name: "Chicken", link: "#chicken" },
@@ -58,13 +58,26 @@ const incremental = (item) => {
 
 const decremental = (item) => {
   setCartItems(
-    cartItems.map((cartItem) =>
-      cartItem.name === item.name && cartItem.quantity > 1
-        ? { ...cartItem, quantity: cartItem.quantity - 1 }
-        : cartItem
-    )
+    cartItems
+      .map((cartItem) =>
+        cartItem.name === item.name && cartItem.quantity > 1
+          ? { ...cartItem, quantity: cartItem.quantity - 1 }
+          : cartItem
+      )
+      .filter((cartItem) => cartItem.quantity > 0) // Filter out items with quantity <= 0
   );
 };
+
+// const decremental = (item) => {
+//   setCartItems(
+//     cartItems.map((cartItem) =>
+//       cartItem.name === item.name && cartItem.quantity > 1
+//         ? { ...cartItem, quantity: cartItem.quantity - 1 }
+//         : cartItem
+//     )
+//   );
+// };
+
 
 
   
@@ -121,6 +134,7 @@ return (
           <div>
             <Front />
           </div>
+
           
 
           <div className="sticky-categories">
@@ -140,7 +154,7 @@ return (
             <MenuList
               incrementCounter={incrementCounter}
               decrementCounter={decrementCounter}
-            />
+              />
           </div>
 
           <div className="fixed bottom-0 left-0 m-4">
@@ -151,22 +165,23 @@ return (
               incremental={incremental}   // Pass incremental function
               decremental={decremental}   // Pass decremental function
               // onToggleDropdown={handleToggleDropdown}
-            />
+              />
           </div>
 
           {isDropdownOpen && (
             <CartDropdown
-              cartItems={cartItems}
-              increment={incremental}
-              decrement={decremental}
-              totalPrice={totalPrice}
-              onClose={handleToggleDropdown} // Passing the toggle function
+            cartItems={cartItems}
+            increment={incremental}
+            decrement={decremental}
+            totalPrice={totalPrice}
+            onClose={handleToggleDropdown} // Passing the toggle function
             />
           )}
 
           <Example />
           
           <Footer />
+          <ScrollToTopButton/>
         </div>
       </div>
     </>

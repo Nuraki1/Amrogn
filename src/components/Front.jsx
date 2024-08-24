@@ -56,7 +56,7 @@ const Front = () => {
         />
         <ServiceCard
           title={isEnglish ? "Available on beU" : "beU ላይ እንገኛለን"}
-          description={isEnglish ? "For Fast Delivery" : "ለፈጣን አድራሽ"}
+          description={isEnglish ? "Fast Delivery" : "ለፈጣን አድራሽ"}
           badgeText={isEnglish ? "Delivery" : "መላኪያ"}
           link="https://instagram.fadd1-1.fna.fbcdn.net/v/t39.30808-6/384736789_17975076464568831_4325980684139093268_n.jpg?stp=dst-jpg_e35_s1080x1080_sh0.08&_nc_ht=instagram.fadd1-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=HG_m_S3_6mAQ7kNvgH7L4UM&gid=65e1c0f8a05f41c2a351f3ec94de8fb7&edm=ANTKIIoAAAAA&ccb=7-5&oh=00_AYDWP73AUHB5u0Tr3WG7RhmpkaKs615ZTgA1j57CwuFNXw&oe=66B095DC&_nc_sid=d885a2"
           // logo={beu}
