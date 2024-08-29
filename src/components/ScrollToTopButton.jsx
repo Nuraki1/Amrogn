@@ -31,7 +31,7 @@ function ScrollToTopButton() {
       {showButton && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 bg-customRed text-white p-3 rounded-full shadow-md hover:bg-blue-700 transition duration-300 ease-in-out animate-bounce"
+          className="fixed bottom-4 right-4 bg-customRed text-white p-3 rounded-full shadow-md hover:bg-customYellow hover:text-black transition duration-300 ease-in-out animate-bounce"
         >
           <FaAngleUp className="w-4 h-4" />
         </button>

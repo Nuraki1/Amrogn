@@ -7,6 +7,7 @@ import Footer from "./components/Footer.jsx";
 import MenuList from "./components/MenuList.jsx";
 import Cart from "./components/Cart.jsx";
 import CartDropdown from "./components/CartDropdown.jsx";
+import SplashScreen from "./components/SplashScreen.jsx";
 
 
 import burgerImage from "./images/burger.png";
@@ -39,6 +40,7 @@ const App = () => {
   const [counter, setCounter] = useState(0);
   const [cartItems, setCartItems] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isSplashVisible, setIsSplashVisible] = useState(true); 
  
   
 const handleToggleDropdown = () => {
@@ -126,65 +128,62 @@ const totalPrice = cartItems.reduce(
   0
 );
 
+const handleSplashHide = () => {
+  setIsSplashVisible(false);
+};
+
 
 return (
-    <>
-      <div className="relative">
-        <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-          <div>
-            <Front />
-          </div>
+  <>
+  {isSplashVisible ? (
+    <SplashScreen onHide={handleSplashHide} />
+  ) : (
+    <div className="relative">
+      <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+        <Front />
 
-          
+        <div className="sticky-categories">
+          <Categories categories={categoryData} />
+        </div>
 
-          <div className="sticky-categories">
-            <Categories categories={categoryData} />
-          </div>
+         <PopularMenu
+          incrementCounter={incrementCounter}
+          decrementCounter={decrementCounter}
+          />
 
-      
+        <MenuList
+          incrementCounter={incrementCounter}
+          decrementCounter={decrementCounter}
+          />
 
-          <div>
-            <PopularMenu
-              incrementCounter={incrementCounter}
-              decrementCounter={decrementCounter}
-            />
-          </div>
-
-          <div>
-            <MenuList
-              incrementCounter={incrementCounter}
-              decrementCounter={decrementCounter}
-              />
-          </div>
-
-          <div className="fixed bottom-0 left-0 m-4">
-            <Cart
-              counter={counter}
-              cartItems={cartItems}
-              totalPrice={totalPrice}
-              incremental={incremental}   // Pass incremental function
-              decremental={decremental}   // Pass decremental function
-              // onToggleDropdown={handleToggleDropdown}
-              />
-          </div>
-
-          {isDropdownOpen && (
-            <CartDropdown
+        <div className="fixed bottom-0 left-0 m-4">
+          <Cart
+            counter={counter}
             cartItems={cartItems}
-            increment={incremental}
-            decrement={decremental}
             totalPrice={totalPrice}
-            onClose={handleToggleDropdown} // Passing the toggle function
+            incremental={incremental}
+            decremental={decremental}
             />
+        </div>
+
+        {isDropdownOpen && (
+          <CartDropdown
+          cartItems={cartItems}
+          increment={incremental}
+          decrement={decremental}
+          totalPrice={totalPrice}
+          onClose={handleToggleDropdown}
+          />
           )}
 
-          <Example />
-          
-          <Footer />
-          <ScrollToTopButton/>
-        </div>
+        <Example />
+        <Footer />
+        <ScrollToTopButton />
+        
       </div>
-    </>
+    </div>
+  )}
+</>
   );
 };
 

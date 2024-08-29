@@ -1,5 +1,5 @@
 import React from 'react';
-import FoodCard from './FoodCard';
+import FoodCardCombo from './FoodCardCombo';
 import '../App.css';
 
 import bgImage from '../images/yellowBg.png'
@@ -11,9 +11,12 @@ import ChickenKabsa from '../images/menu/Akabsa.png';
 import ChickenWing from '../images/menu/wing4.png';
 import ChickenMofo from '../images/menu/chickenMofo.png';
 import GrilledChicken from '../images/menu/grilledChicken.png';
-import ShawarmaPlate from '../images/shawarmaPlate2.png';
-import Fajitah from '../images/menu/fajitah.png';
-import Aroasted from '../images/AroastedFull.png';
+import GullashCombo from '../images/gullashes.png';
+import roasted from '../images/roasteds.png';
+import grilled from '../images/grilledComb.png';
+import combo1 from '../images/comboList.png';
+import combo2 from '../images/mofos.png';
+import AmrognCombo from '../images/comboA.png'
 
 // import Shawarma from '../images/shawarma2.png';
 import { GiFoodTruck } from 'react-icons/gi';
@@ -37,68 +40,67 @@ const PopularMenu = ({ incrementCounter, decrementCounter }) => {
     </div> */}
     {/* Head of the menu */}
 
-<div className="w-full poppins-bold mb-8 pt-32 relative">
+<div className="w-full poppins-bold mb-8 pt-20 relative">
   <h2 className="text-3xl text-black dark:text-gray-100 pr-3 ">
-     New Amrogn Lists
+     Amrogn Combo Menus
   </h2>
   <div className="absolute top-0 right-0 transform translate-x-3 translate-y-3 animate-bounce">
     <GiKnifeFork className="w-10 h-10 pt-32 font-extrabold text-customRed" />
   </div>
 </div>
 
-    <FoodCard
-      image={ChickenBurger}
-      name="Chicken Burger"
-      price={390}
+<FoodCardCombo
+  image={combo1}
+  name="Amrogn Combo"
+  price={1250}
+  rating={4.1}
+  size="Amrogn Special Chicken, rice,salad, pita, sauce"
+  incrementCounter={() => incrementCounter({ image: AmrognCombo, name: "Amrogn Combo", price: 1250 })}
+  decrementCounter={() => decrementCounter({ image: AmrognCombo, name: "Amrogn Combo", price: 1250 })}
+/>
+    <FoodCardCombo
+      image={GullashCombo}
+      name="Goulash Combo"
+      price={1050}
       rating={4.5}
-      size= "chicken, bread , fries, sauce"
-      incrementCounter={() => incrementCounter({ image: ChickenBurger, name: "Chicken Burger", price: 390 })}
-      decrementCounter={() => decrementCounter({ image: ChickenBurger, name: "Chicken Burger", price: 390 })}
+      size= "chicken goulash, legs, salad, pita , rice, sauce"
+      incrementCounter={() => incrementCounter({ image: combo1, name: "Goulash Combo", price: 1050 })}
+      decrementCounter={() => decrementCounter({ image: combo1, name: "Goulash Combo", price: 1050 })}
     />
-     <FoodCard
-      image={Aroasted}
-      name="Roasted Chicken"
+     <FoodCardCombo
+      image={combo2}
+      name="Moffo Combo"
       price={1100}
       rating={4.1}
-      size= "Full"
-      incrementCounter={() => incrementCounter({ image: Aroasted, name: "Roasted Chicken", price: 390 })}
-      decrementCounter={() => decrementCounter({ image: Aroasted, name: "Roasted Chicken", price: 390 })}
+      size= "moffo chicken, legs, pita, sauce, rice "
+      incrementCounter={() => incrementCounter({ image: combo2, name: "Moffo Combo", price: 1100 })}
+      decrementCounter={() => decrementCounter({ image: combo2, name: "Moffo Combo", price: 1100 })}
     />
-    {/* <FoodCard
+    {/* <FoodCardCombo
       image={roastedChicken}
       name="Roasted Chicken"
       price={1250}
       rating={4.1}
       size= "Full "
     /> */}
-    <FoodCard
-      image={Shawarma}
-      name="Chicken Shawarma"
-      price={285}
-      rating={4.1}
-      size={1100}
-      incrementCounter={() => incrementCounter({ image: Shawarma, name: "Chicken Shawarma", price: 285 })}
-      decrementCounter={() => decrementCounter({ image: Shawarma, name: "Chicken Shawarma", price: 285 })}
-    />
-    <FoodCard
-      image={FriedChicken}
-      name="Fried Chicken"
+    <FoodCardCombo
+      image={grilled}
+      name="Grilled Combo"
       price={550}
       rating={4.1}
-      size={4 }
-      incrementCounter={() => incrementCounter({ image: FriedChicken, name: "Fried Chicken", price: 550 })}
-      decrementCounter={() => decrementCounter({ image: FriedChicken, name: "Fried Chicken", price: 550 })}
+      size="grilled chicken, legs, pita, rice, sauce"
+      incrementCounter={() => incrementCounter({ image: FriedChicken, name: "Grilled Combo", price: 1050 })}
+      decrementCounter={() => decrementCounter({ image: FriedChicken, name: "Grilled Combo", price: 1050 })}
     />
-    <FoodCard
-      image={ChickenKabsa}
-      name="Chicken Kabsa"
-      price={470}
-      rating={4.1}
-      size={1100}
-      incrementCounter={() => incrementCounter({ image: ChickenKabsa, name: "Chicken Kabsa", price: 470 })}
-      decrementCounter={() => decrementCounter({ image: ChickenKabsa, name: "Chicken Kabsa", price: 470 })}
+    <FoodCardCombo
+      image={roasted}
+      name="Roasted Combo"
+      price={1150}
+      size="roasted chicken, legs, rice, pita, sauces"
+      incrementCounter={() => incrementCounter({ image: ChickenKabsa, name: "Roasted Combo", price: 1150 })}
+      decrementCounter={() => decrementCounter({ image: ChickenKabsa, name: "Roasted Combo", price: 1150 })}
     />
-    <FoodCard
+    {/* <FoodCardCombo
       image={ChickenWing}
       name="Chicken Wings"
       price={440}
@@ -107,7 +109,7 @@ const PopularMenu = ({ incrementCounter, decrementCounter }) => {
       incrementCounter={() => incrementCounter({ image: ChickenWing, name: "Chicken Wings", price: 440 })}
       decrementCounter={() => decrementCounter({ image: ChickenWing, name: "Chicken Wings", price: 440 })}
     />
-    <FoodCard
+    <FoodCardCombo
       image={ChickenMofo}
       name="Chicken Mofo"
       price={1150}
@@ -116,7 +118,7 @@ const PopularMenu = ({ incrementCounter, decrementCounter }) => {
       incrementCounter={() => incrementCounter({ image: ChickenMofo, name: "Chicken Mofo", price: 1150 })}
       decrementCounter={() => decrementCounter({ image: ChickenMofo, name: "Chicken Mofo", price: 1150 })}
     />
-    <FoodCard
+    <FoodCardCombo
       image={ShawarmaPlate}
       name="Shawarma Plate"
       price={560}
@@ -125,7 +127,16 @@ const PopularMenu = ({ incrementCounter, decrementCounter }) => {
       incrementCounter={() => incrementCounter({ image: ShawarmaPlate, name: "Shawarma Plate", price: 560 })}
       decrementCounter={() => decrementCounter({ image: ShawarmaPlate, name: "Shawarma Plate", price: 560 })}
     />
-    <FoodCard
+      <FoodCardCombo
+        image={Fajitah}
+        name="Fajitah"
+        price={580}
+        rating={4.1}
+        size={1100}
+        incrementCounter={() => incrementCounter({ image: Fajitah, name: "Fajitah", price: 580 })}
+        decrementCounter={() => decrementCounter({ image: Fajitah, name: "Fajitah", price: 580 })}
+      />
+    <FoodCardCombo
       image={GrilledChicken}
       name="Gilled Chicken"
       price={1100}
@@ -133,16 +144,7 @@ const PopularMenu = ({ incrementCounter, decrementCounter }) => {
       size={1100}
       incrementCounter={() => incrementCounter({ image: GrilledChicken, name: "Gilled Chicken", price: 390 })}
       decrementCounter={() => decrementCounter({ image: GrilledChicken, name: "Gilled Chicken", price: 390 })}
-    />
-    <FoodCard
-      image={Fajitah}
-      name="Fajitah"
-      price={580}
-      rating={4.1}
-      size={1100}
-      incrementCounter={() => incrementCounter({ image: Fajitah, name: "Fajitah", price: 580 })}
-      decrementCounter={() => decrementCounter({ image: Fajitah, name: "Fajitah", price: 580 })}
-    />
+    /> */}
 
 {/* <hr class="border-t border-gray-300 w-1/2 mx-auto" /> */}
 

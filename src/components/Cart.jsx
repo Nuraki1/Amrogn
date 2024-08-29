@@ -21,8 +21,12 @@ const Cart = ({ counter, cartItems, totalPrice, incremental, decremental }) => {
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
+
       document.removeEventListener("mousedown", handleClickOutside);
+      
     };
+
+
   }, [cartRef]);
 
   return (
