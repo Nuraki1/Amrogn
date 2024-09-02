@@ -11,11 +11,11 @@ import ChickenKabsa from '../images/menu/Akabsa.png';
 import ChickenWing from '../images/menu/wing4.png';
 import ChickenMofo from '../images/menu/chickenMofo.png';
 import GrilledChicken from '../images/menu/grilledChicken.png';
-import GullashCombo from '../images/gullashes.png';
+import GullashCombo from '../images/gullashes copy.png';
 import roasted from '../images/roasteds.png';
 import grilled from '../images/grilledComb.png';
 import combo1 from '../images/comboList.png';
-import combo2 from '../images/mofos.png';
+import mofoCombo from '../images/mofos2.png';
 import AmrognCombo from '../images/comboA.png'
 
 // import Shawarma from '../images/shawarma2.png';
@@ -68,7 +68,7 @@ const PopularMenu = ({ incrementCounter, decrementCounter }) => {
       decrementCounter={() => decrementCounter({ image: combo1, name: "Goulash Combo", price: 1050 })}
     />
      <FoodCardCombo
-      image={combo2}
+      image={mofoCombo}
       name="Moffo Combo"
       price={1100}
       rating={4.1}
@@ -93,7 +93,7 @@ const PopularMenu = ({ incrementCounter, decrementCounter }) => {
       decrementCounter={() => decrementCounter({ image: FriedChicken, name: "Grilled Combo", price: 1050 })}
     />
     <FoodCardCombo
-      image={roasted}
+      image={roastedChicken}
       name="Roasted Combo"
       price={1150}
       size="roasted chicken, legs, rice, pita, sauces"

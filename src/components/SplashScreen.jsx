@@ -20,7 +20,7 @@ const SplashScreen = ({ onHide }) => {
       <div className="fixed inset-0 bg-customYellow flex items-center justify-center z-50">
         <div className="text-gray poppins-regular text-1xl font-bold   ">
           <img src={splash} alt="App Logo" className="w-40 h-40" />
-          <p>Speak the chicken</p>
+          <p>We Speak Chicken</p>
         </div>
       </div>
     )
