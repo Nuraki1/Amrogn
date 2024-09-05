@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom"; // Updated import
 import Categories from "./components/Categories.jsx";
 import Front from "./components/Front.jsx";
 import PopularMenu from "./components/PopularMenu.jsx";
@@ -8,7 +9,7 @@ import MenuList from "./components/MenuList.jsx";
 import Cart from "./components/Cart.jsx";
 import CartDropdown from "./components/CartDropdown.jsx";
 import SplashScreen from "./components/SplashScreen.jsx";
-
+import PaymentPage from "./components/PaymentPage.jsx"; // Import the PaymentPage
 
 import burgerImage from "./images/burger.png";
 import friesImage from "./images/fries.png";
@@ -19,7 +20,6 @@ import strawberry from "./images/strawberry.png";
 import soft from "./images/cola.png";
 import Chicken from "./images/logos.png";
 import shawarma from "./images/menu/shawarma.png";
-
 
 import "./App.css";
 import ScrollToTopButton from "./components/ScrollToTopButton.jsx";
@@ -41,53 +41,38 @@ const App = () => {
   const [cartItems, setCartItems] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSplashVisible, setIsSplashVisible] = useState(true); 
- 
   
-const handleToggleDropdown = () => {
-  setIsDropdownOpen(!isDropdownOpen);
-};
 
 
-const incremental = (item) => {
-  setCartItems(
-    cartItems.map((cartItem) =>
-      cartItem.name === item.name
-        ? { ...cartItem, quantity: cartItem.quantity + 1 }
-        : cartItem
-    )
-  );
-};
+  const handleToggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
-const decremental = (item) => {
-  setCartItems(
-    cartItems
-      .map((cartItem) =>
-        cartItem.name === item.name && cartItem.quantity > 1
-          ? { ...cartItem, quantity: cartItem.quantity - 1 }
+  const incremental = (item) => {
+    setCartItems(
+      cartItems.map((cartItem) =>
+        cartItem.name === item.name
+          ? { ...cartItem, quantity: cartItem.quantity + 1 }
           : cartItem
       )
-      .filter((cartItem) => cartItem.quantity > 0) // Filter out items with quantity <= 0
-  );
-};
+    );
+  };
 
-// const decremental = (item) => {
-//   setCartItems(
-//     cartItems.map((cartItem) =>
-//       cartItem.name === item.name && cartItem.quantity > 1
-//         ? { ...cartItem, quantity: cartItem.quantity - 1 }
-//         : cartItem
-//     )
-//   );
-// };
+  const decremental = (item) => {
+    setCartItems(
+      cartItems
+        .map((cartItem) =>
+          cartItem.name === item.name && cartItem.quantity > 1
+            ? { ...cartItem, quantity: cartItem.quantity - 1 }
+            : cartItem
+        )
+        .filter((cartItem) => cartItem.quantity > 0)
+    );
+  };
 
-
-
-  
   const incrementCounter = (item) => {
-
     setCounter(counter + 1);
-
-    const existingItem = cartItems.find ( (cartItem) => cartItem.name === item.name);
+    const existingItem = cartItems.find((cartItem) => cartItem.name === item.name);
 
     if (existingItem) {
       setCartItems(
@@ -103,87 +88,91 @@ const decremental = (item) => {
   };
 
   const decrementCounter = (item) => {
-    const existingItem = cartItems.find(
-      (cartItem) => cartItem.name === item.name
-    );
+    const existingItem = cartItems.find((cartItem) => cartItem.name === item.name);
     if (existingItem.quantity === 1) {
-      const updatedCartItems = cartItems.filter(
-        (cartItem) => cartItem.name !== item.name
-      );
+      const updatedCartItems = cartItems.filter((cartItem) => cartItem.name !== item.name);
       setCartItems(updatedCartItems);
       setCounter(counter - 1);
     } else {
       const updatedCartItems = cartItems.map((cartItem) =>
         cartItem.name === item.name
-      ? { ...cartItem, quantity: cartItem.quantity - 1 }
-      : cartItem
-    );
-    setCartItems(updatedCartItems);
-    setCounter(counter - 1);
-  }
-};
+          ? { ...cartItem, quantity: cartItem.quantity - 1 }
+          : cartItem
+      );
+      setCartItems(updatedCartItems);
+      setCounter(counter - 1);
+    }
+  };
 
-const totalPrice = cartItems.reduce(
-  (total, item) => total + item.price * item.quantity,
-  0
-);
+  const totalPrice = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
 
-const handleSplashHide = () => {
-  setIsSplashVisible(false);
-};
+  const handleSplashHide = () => {
+    setIsSplashVisible(false);
+  };
 
+  
+  return (
+  
+      <Routes>
+        <Route
+          path="/Amrogn"
+          element={
+            isSplashVisible ? (
+              <SplashScreen onHide={handleSplashHide} />
+            ) : (
+              <div className="relative">
+                <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+                  <Front />
 
-return (
-  <>
-  {isSplashVisible ? (
-    <SplashScreen onHide={handleSplashHide} />
-  ) : (
-    <div className="relative">
-      <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-        <Front />
+                  <div className="sticky-categories">
+                    <Categories categories={categoryData} />
+                  </div>
 
-        <div className="sticky-categories">
-          <Categories categories={categoryData} />
-        </div>
+                  <PopularMenu
+                    incrementCounter={incrementCounter}
+                    decrementCounter={decrementCounter}
+                  />
 
-         <PopularMenu
-          incrementCounter={incrementCounter}
-          decrementCounter={decrementCounter}
-          />
+                  <MenuList
+                    incrementCounter={incrementCounter}
+                    decrementCounter={decrementCounter}
+                  />
 
-        <MenuList
-          incrementCounter={incrementCounter}
-          decrementCounter={decrementCounter}
-          />
+                  <div className="fixed bottom-0 left-0 m-4">
+                    <Cart
+                      counter={counter}
+                      cartItems={cartItems}
+                      totalPrice={totalPrice}
+                      incremental={incremental}
+                      decremental={decremental}
+                    />
+                  </div>
 
-        <div className="fixed bottom-0 left-0 m-4">
-          <Cart
-            counter={counter}
-            cartItems={cartItems}
-            totalPrice={totalPrice}
-            incremental={incremental}
-            decremental={decremental}
-            />
-        </div>
+                  {isDropdownOpen && (
+                    <CartDropdown
+                      cartItems={cartItems}
+                      incremental={incremental}
+                      decremental={decremental}
+                      totalPrice={totalPrice}
+                      onClose={handleToggleDropdown}
+                      // onPay={handlePayClick} // Pass the handlePayClick function
+                    />
+                  )}
 
-        {isDropdownOpen && (
-          <CartDropdown
-          cartItems={cartItems}
-          increment={incremental}
-          decrement={decremental}
-          totalPrice={totalPrice}
-          onClose={handleToggleDropdown}
-          />
-          )}
-
-        <Example />
-        <Footer />
-        <ScrollToTopButton />
-        
-      </div>
-    </div>
-  )}
-</>
+                  <Footer />
+                  <ScrollToTopButton />
+                </div>
+                  <Example />
+              </div>
+            )
+          }
+        />
+        <Route path="/payment" element={<PaymentPage cartItems={cartItems} totalPrice={totalPrice} />} />
+      </Routes>
+   
   );
 };
 
