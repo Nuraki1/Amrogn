@@ -58,17 +58,20 @@ const App = () => {
     );
   };
 
+
+
   const decremental = (item) => {
-    setCartItems(
-      cartItems
+    setCartItems((prevCartItems) => {
+      return prevCartItems
         .map((cartItem) =>
-          cartItem.name === item.name && cartItem.quantity > 1
+          cartItem.name === item.name && cartItem.quantity > 0
             ? { ...cartItem, quantity: cartItem.quantity - 1 }
             : cartItem
         )
-        .filter((cartItem) => cartItem.quantity > 0)
-    );
+        .filter((cartItem) => cartItem.quantity > 0);
+    });
   };
+  
 
   const incrementCounter = (item) => {
     setCounter(counter + 1);
