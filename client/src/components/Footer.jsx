@@ -77,12 +77,12 @@ const Footer = () => {
                   <h2 className="mb-6 text-sm font-bold text-gray-900  dark:text-white">Opening Time</h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                       <li className="mb-4">
-                          <a href="#" className="hover:underline">Monday - Monday
+                         <a href="tel:+251945756110" className="hover:underline "> Monday - Monday</a>
 
 </a>
                       </li>
                       <li>
-                          <a href="#" className="hover:underline">09:00 - 20:30</a>
+                          <a href="#" className="hover:underline"> from 8:30 AM - 1:30 PM</a>
                       </li>
                   </ul>
               </div>
@@ -91,7 +91,7 @@ const Footer = () => {
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://EtcodeX.com/" className="hover:underline">ETcodeX™</a>. All Rights Reserved.
-          <div className="text-sm text-gray-500 sm:text-center dark:text-gray-400">Developed By CEO of ETcodeX - <a href='linkedin.com/in/akrem-beshir-a0651521a'>Akrem Beshir</a> </div>
+          <div className="text-sm text-gray-500 sm:text-center dark:text-gray-400">Developed By ETcodeX - <a href="tel:+251945756110" className="hover:underline ">+251 945 756110</a> </div>
           </span>
           <div className="flex mt-4 sm:justify-center sm:mt-0">
               <a href="https://www.facebook.com/profile.php?id=100094698812992" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
