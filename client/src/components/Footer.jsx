@@ -79,7 +79,7 @@ const Footer = () => {
                       <li className="mb-4">
                          <a href="tel:+251945756110" className="hover:underline "> Monday - Monday</a>
 
-</a>
+
                       </li>
                       <li>
                           <a href="#" className="hover:underline"> from 8:30 AM - 1:30 PM</a>
