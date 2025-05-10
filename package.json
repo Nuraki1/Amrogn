@@ -9,7 +9,7 @@
     "dev": "npx vite",
     "build": "vite build",
     "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist -r https://github.com/Nuraki1/Amrogn.git -b gh-pages",
+  "deploy": "gh-pages -d dist -r http://github.com/Nuraki1/Amrogn.git -b gh-pages",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
