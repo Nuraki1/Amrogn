@@ -26,6 +26,8 @@ const Front = () => {
          <div className="ml-3 mt-0 md:mt-0">
             <LocalizationToggle onLanguageChange={handleLanguageChange} />
           </div>
+
+          
       <div className="flex flex-col md:flex-row justify-between items-center">
         <div className="md:w-1/2">
           <img src={Logo} alt="Delivery" className="w-full h-auto dark:bg-gray-900" />
