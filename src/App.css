@@ -1,0 +1,210 @@
+/* App.css or global CSS file */
+html {
+  scroll-behavior: smooth;
+}
+
+.badge-content {
+  display: flex;
+  align-items: center; /* Align items vertically centered */
+}
+
+.badge-content .react-icons {
+  margin-left: 10px; /* Adjust spacing between text and icon */
+}
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.sticky-categories {
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Adjust as needed to ensure it stays above other elements */
+  background-color: white; /* Optional: Set a background color to avoid transparency issues */
+}
+
+/* Add these styles to your CSS file */
+
+/* Ensure buttons are well-spaced */
+button {
+  padding: 10px;
+  margin: 5px;
+}
+
+/* Adjust the nav container for mobile */
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Adjust the hamburger menu button */
+.hamburger-button {
+  top: 16px;
+  right: 16px;
+}
+
+/* Adjust image and link container for mobile */
+.nav-logo img {
+  width: 50px; /* Adjust size as needed */
+}
+
+.links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-ctas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  /* Mobile specific styles */
+  .hamburger-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-logo img {
+    width: 30px;
+  }
+
+  .links-container {
+    padding: 10px;
+  }
+
+  .footer-ctas {
+    padding: 10px;
+  }
+}
+
+.tooltip {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: black;
+  color: white;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-0.5rem);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.tooltip-show {
+  opacity: 1;
+  transform: translateY(0);
+}
